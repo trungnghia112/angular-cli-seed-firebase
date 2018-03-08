@@ -25,8 +25,7 @@ export class AppComponent implements AfterViewInit {
       this.swUpdate.available.subscribe(event => {
         // update available: ask the user to reload
         if (confirm('New version available. Load New Version?')) {
-          this.swUpdate.activateUpdate()
-            .then(() => document.location.reload()); // load the update
+          this.swUpdate.activateUpdate().then(() => document.location.reload()); // load the update
         }
       });
     }

@@ -11,7 +11,9 @@ export class AppComponent implements AfterViewInit {
   title = 'app';
 
   constructor(private swUpdate: SwUpdate) {
-    console.log(environment);
+    if (!environment.production) {
+      console.log(environment);
+    }
   }
 
   ngAfterViewInit() {

@@ -12,9 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
   providers: []
 })
 export class CoreAppModule {
-  constructor(@Optional()
-              @SkipSelf()
-                parentModule: CoreAppModule) {
+  constructor(
+    @Optional()
+    @SkipSelf()
+    parentModule: CoreAppModule
+  ) {
     if (parentModule) {
       throw new Error('CoreModule is already loaded. Import only in AppModule');
     }

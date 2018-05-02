@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "npm run clean && ng build --prod",
     "imagemin": "gulp imagemin",
     "test": "ng test",
     "lint": "ng lint",

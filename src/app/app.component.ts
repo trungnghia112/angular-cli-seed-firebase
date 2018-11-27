@@ -1,5 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
-import { environment } from '@env/environment';
+import { Component } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 
 @Component({
@@ -7,27 +6,14 @@ import { SwUpdate } from '@angular/service-worker';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit {
-  title = 'app';
+export class AppComponent {
+  title = 'angular-cli-seed';
 
-  constructor(private swUpdate: SwUpdate) {
-    if (!environment.production) {
-      console.log(environment);
-    }
-  }
-
-  ngAfterViewInit() {
-    // check back to the server to see if a new ngsw.json is available
-    // this can be called inside setInterval, upon router navigation, etc.
-    // this.swUpdate.checkForUpdate();
-
-    if (this.swUpdate.isEnabled) {
-      this.swUpdate.available.subscribe(event => {
-        // update available: ask the user to reload
-        if (confirm('New version available. Load New Version?')) {
-          this.swUpdate.activateUpdate().then(() => document.location.reload()); // load the update
-        }
-      });
-    }
+  constructor(updates: SwUpdate) {
+    updates.available.subscribe(event => {
+      if (confirm('New version available. Load New Version?')) {
+        updates.activateUpdate().then(() => document.location.reload());
+      }
+    });
   }
 }

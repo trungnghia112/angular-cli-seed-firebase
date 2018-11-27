@@ -2,12 +2,16 @@
 
 # compiled output
 /dist
-/dist-server
 /tmp
 /out-tsc
+/coverage
 
 # dependencies
 /node_modules
+
+# profiling files
+chrome-profiler-events.json
+speed-measure-plugin.json
 
 # IDEs and editors
 /.idea
@@ -25,6 +29,9 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# compodoc
+/documentation
+
 # misc
 /.sass-cache
 /connect.lock
@@ -36,11 +43,17 @@ testem.log
 /typings
 
 # e2e
-/e2e/*.js
-/e2e/*.map
+/e2e/src/*.js
+/e2e/src/*.map
+/cypress/screenshots
 
 # System Files
 .DS_Store
 Thumbs.db
+
+# debug
+debug.log
+
+# others
 
 *_BAK*

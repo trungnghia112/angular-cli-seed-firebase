@@ -2,7 +2,6 @@
 by [@trungnghia112](https://twitter.com/trungnghia112)
 
 ## Stack
-
 * Angular & Angular CLI
 * Progressive Web Apps
 
@@ -11,6 +10,8 @@ by [@trungnghia112](https://twitter.com/trungnghia112)
 * Faster load speeds and offline support using a service worker.
 * Web App Manifest that allows you to add to your phone's home screen.
 * Loading CSS Asynchronously
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
 
 ## Development server
 

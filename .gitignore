@@ -4,7 +4,6 @@
 /dist
 /tmp
 /out-tsc
-/coverage
 
 # dependencies
 /node_modules
@@ -28,9 +27,7 @@ speed-measure-plugin.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
-# compodoc
-/documentation
+.history/*
 
 # misc
 /.sass-cache
@@ -42,14 +39,17 @@ yarn-error.log
 testem.log
 /typings
 
+# System Files
+.DS_Store
+Thumbs.db
+
 # e2e
 /e2e/src/*.js
 /e2e/src/*.map
 /cypress/screenshots
 
-# System Files
-.DS_Store
-Thumbs.db
+# compodoc
+/documentation
 
 # debug
 debug.log

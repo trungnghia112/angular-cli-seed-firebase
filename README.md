@@ -11,7 +11,7 @@ by [@trungnghia112](https://twitter.com/trungnghia112)
 * Web App Manifest that allows you to add to your phone's home screen.
 * Loading CSS Asynchronously
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
 ## Development server
 

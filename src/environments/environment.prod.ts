@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   i18nPrefix: '',
-  appPrefix: 'APP',
+  appName: 'APP',
   API: 'http://localhost:8000/api'
 };

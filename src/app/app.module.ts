@@ -10,9 +10,6 @@ import { CoreAppModule } from './core/core.module';
 import { SharedAppModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -20,6 +17,9 @@ import { SharedAppModule } from './shared/shared.module';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     CoreAppModule,
     SharedAppModule
+  ],
+  declarations: [
+    AppComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   i18nPrefix: '',
-  appPrefix: 'APP',
+  appName: 'APP',
   API: 'http://localhost:8000/api'
 };
 

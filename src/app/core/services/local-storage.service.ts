@@ -3,15 +3,18 @@ import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class LocalStorageService {
+  appNamePrefix: string;
+
   constructor() {
+    this.appNamePrefix = `${environment.appName}-`;
   }
 
-  static loadInitialState() {
+  loadInitialState() {
     return Object.keys(localStorage).reduce((state: any, storageKey) => {
-      if (storageKey.includes(environment.appPrefix)) {
+      if (storageKey.includes(this.appNamePrefix)) {
         state = state || {};
         const stateKey = storageKey
-          .replace(environment.appPrefix, '')
+          .replace(this.appNamePrefix, '')
           .toLowerCase()
           .split('.');
         let currentStateRef = state;
@@ -29,10 +32,10 @@ export class LocalStorageService {
   }
 
   setItem(key: string, value: any) {
-    localStorage.setItem(`${environment.appPrefix}${key}`, JSON.stringify(value));
+    localStorage.setItem(`${this.appNamePrefix}${key}`, JSON.stringify(value));
   }
 
   getItem(key: string) {
-    return JSON.parse(localStorage.getItem(`${environment.appPrefix}${key}`));
+    return JSON.parse(localStorage.getItem(`${this.appNamePrefix}${key}`));
   }
 }

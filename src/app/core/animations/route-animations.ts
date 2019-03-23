@@ -1,6 +1,6 @@
 import { animate, group, keyframes, query, style, transition, trigger } from '@angular/animations';
 
-
+const optionalAnimate = { optional: true };
 // Basic
 
 export const fader =
@@ -14,7 +14,7 @@ export const fader =
           opacity: 0,
           transform: 'scale(0) translateY(100%)'
         })
-      ]),
+      ], optionalAnimate),
       query(':enter', [
         animate('600ms ease', style({ opacity: 1, transform: 'scale(1) translateY(0)' }))
       ])
@@ -43,7 +43,6 @@ export const transformer =
 
 
 function slideTo(direction) {
-  const optional = { optional: true };
   return [
     query(':enter, :leave', [
       style({
@@ -52,17 +51,17 @@ function slideTo(direction) {
         [direction]: 0,
         width: '100%'
       })
-    ], optional),
+    ], optionalAnimate),
     query(':enter', [
       style({ [direction]: '-100%' })
-    ]),
+    ], optionalAnimate),
     group([
       query(':leave', [
         animate('600ms ease', style({ [direction]: '100%' }))
-      ], optional),
+      ], optionalAnimate),
       query(':enter', [
         animate('600ms ease', style({ [direction]: '0%' }))
-      ])
+      ], optionalAnimate)
     ])
     // Normalize the page style... Might not be necessary
 
@@ -74,7 +73,7 @@ function slideTo(direction) {
 
 
 function translateTo({ x = 100, y = 0, rotate = 0 }) {
-  const optional = { optional: true };
+
   return [
     query(':enter, :leave', [
       style({
@@ -83,17 +82,17 @@ function translateTo({ x = 100, y = 0, rotate = 0 }) {
         left: 0,
         width: '100%'
       })
-    ], optional),
+    ], optionalAnimate),
     query(':enter', [
       style({ transform: `translate(${x}%, ${y}%) rotate(${rotate}deg)` })
-    ]),
+    ], optionalAnimate),
     group([
       query(':leave', [
         animate('600ms ease-out', style({ transform: `translate(${x}%, ${y}%) rotate(${rotate}deg)` }))
-      ], optional),
+      ], optionalAnimate),
       query(':enter', [
         animate('600ms ease-out', style({ transform: `translate(0, 0) rotate(0)` }))
-      ])
+      ], optionalAnimate)
     ])
   ];
 }
@@ -110,7 +109,7 @@ export const stepper =
           left: 0,
           width: '100%'
         })
-      ]),
+      ], optionalAnimate),
       group([
         query(':enter', [
           animate('2000ms ease', keyframes([
@@ -118,14 +117,14 @@ export const stepper =
             style({ transform: 'scale(0.5) translateX(25%)', offset: 0.3 }),
             style({ transform: 'scale(1) translateX(0%)', offset: 1 })
           ]))
-        ]),
+        ], optionalAnimate),
         query(':leave', [
           animate('2000ms ease', keyframes([
             style({ transform: 'scale(1)', offset: 0 }),
             style({ transform: 'scale(0.5) translateX(-25%) rotate(0)', offset: 0.35 }),
             style({ opacity: 0, transform: 'translateX(-50%) rotate(-180deg) scale(6)', offset: 1 })
           ]))
-        ])
+        ], optionalAnimate)
       ])
     ])
 

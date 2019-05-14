@@ -2,12 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '@env/environment';
+import { CoreAppModule } from '@core/core.module';
+import { SharedAppModule } from '@shared/shared.module';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { CoreAppModule } from './core/core.module';
-import { SharedAppModule } from './shared/shared.module';
 
 @NgModule({
   imports: [

@@ -2,7 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
-import { environment } from '../environments/environment';
+import { environment } from '@env/environment';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -13,7 +13,7 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent
-      ],
+      ]
     }).compileComponents();
   }));
 

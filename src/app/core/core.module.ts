@@ -1,13 +1,7 @@
-import { NgModule, Optional, SkipSelf, ErrorHandler } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ApiService } from './services/api.service';
-import { AuthService } from './services/auth.service';
-import { AuthGuard } from './services/auth.guard';
-import { LocalStorageService } from './services/local-storage.service';
-import { LogService } from './services/log.service';
-import { NotifyService } from './services/notify.service';
-import { AppErrorHandler } from './error-handler/app-error-handler.service';
-import { httpInterceptorProviders } from './http-interceptors';
+import {ErrorHandler, NgModule, Optional, SkipSelf} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {AppErrorHandler} from './error-handler/app-error-handler.service';
+import {httpInterceptorProviders} from './http-interceptors';
 
 @NgModule({
   declarations: [],
@@ -15,14 +9,8 @@ import { httpInterceptorProviders } from './http-interceptors';
     CommonModule,
   ],
   providers: [
-    ApiService,
-    AuthService,
-    AuthGuard,
-    LocalStorageService,
-    LogService,
-    NotifyService,
     httpInterceptorProviders,
-    { provide: ErrorHandler, useClass: AppErrorHandler }
+    {provide: ErrorHandler, useClass: AppErrorHandler}
   ]
 })
 export class CoreAppModule {

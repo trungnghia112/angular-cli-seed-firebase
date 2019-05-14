@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 import { RouterOutlet } from '@angular/router';
-
-import { stepper } from './core/animations/route-animations';
+import { stepper } from '@core/animations/route-animations';
 
 @Component({
   selector: 'app-root',

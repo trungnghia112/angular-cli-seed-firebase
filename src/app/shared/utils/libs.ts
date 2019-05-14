@@ -1,6 +1,5 @@
-/* tslint:disable */
-export module libsFunction {
-  export function unsigned(str) {
+export default class Libs {
+  static unsigned(str) {
     str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, 'a');
     str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, 'e');
     str = str.replace(/ì|í|ị|ỉ|ĩ/g, 'i');
@@ -17,5 +16,16 @@ export module libsFunction {
     str = str.replace(/Đ/g, 'D');
     return str;
   }
+
+  static convertMinutesToDatetime(date, value) {
+    const dateTime = new Date(date);
+
+    const hours = (value / 60);
+    const rhours = Math.floor(hours);
+    const minutes = (hours - rhours) * 60;
+    const rminutes = Math.round(minutes);
+
+    dateTime.setHours(rhours, rminutes, 0, 0);
+    return dateTime;
+  }
 }
-/* tslint:enable */

@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { environment } from '../../environments/environment';
+import { environment } from '@env/environment';
 import { DirectivesModule } from './directives/directives.module';
 import { PipesModule } from './pipes/pipes.module';
 import { SharedBoxLoadingComponent } from './components/box-loading/box-loading.component';
@@ -18,6 +18,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     '.json'
   );
 }
+
+const sharedComponents = [
+  SharedBoxLoadingComponent
+];
 
 @NgModule({
   imports: [
@@ -44,7 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
   ],
   declarations: [
-    SharedBoxLoadingComponent
+    ...sharedComponents
   ],
   exports: [
     FormsModule,
@@ -60,7 +64,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 
     // 3rd party
     TranslateModule,
-    SharedBoxLoadingComponent
+
+    ...sharedComponents
   ]
 })
 export class SharedAppModule {

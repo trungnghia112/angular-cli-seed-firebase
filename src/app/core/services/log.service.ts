@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { NotifyService } from './notify.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class LogService {
   constructor(private notify: NotifyService) {
   }

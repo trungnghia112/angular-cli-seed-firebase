@@ -1,19 +1,16 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
-import { environment } from '@env/environment';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule,
-        ServiceWorkerModule.register('', { enabled: environment.production })
+        RouterTestingModule
       ],
       declarations: [
         AppComponent
-      ]
+      ],
     }).compileComponents();
   }));
 

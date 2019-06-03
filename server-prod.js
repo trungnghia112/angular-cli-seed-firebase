@@ -1,7 +1,7 @@
 const express = require('express');
 const compression = require('compression');
 
-const CONTEXT = `/${process.env.CONTEXT || 'angular-cli-seed'}`;
+const CONTEXT = `/${process.env.CONTEXT || 'browser'}`;
 const PORT = process.env.PORT || 4000;
 
 const app = express();

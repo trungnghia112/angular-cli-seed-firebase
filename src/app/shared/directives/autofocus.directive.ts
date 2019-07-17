@@ -34,6 +34,7 @@ import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
  *
  */
 @Directive({
+  /* tslint:disable */
   selector: '[autofocus]'
 })
 export class AutofocusInputDirective implements AfterViewInit {

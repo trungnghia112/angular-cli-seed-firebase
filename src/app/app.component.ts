@@ -18,11 +18,13 @@ export class AppComponent {
   title = 'angular-cli-seed';
 
   constructor(updates: SwUpdate) {
-    updates.available.subscribe(event => {
-      if (confirm('New version available. Load New Version?')) {
-        updates.activateUpdate().then(() => document.location.reload());
-      }
-    });
+    if (updates.isEnabled) {
+      updates.available.subscribe(event => {
+        if (confirm('New version available. Load New Version?')) {
+          updates.activateUpdate().then(() => document.location.reload());
+        }
+      });
+    }
   }
 
   prepareRoute(outlet: RouterOutlet) {

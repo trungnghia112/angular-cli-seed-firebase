@@ -2,16 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>AngularCliSeed</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Angular CLI Seed</title>
   <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#1976d2">
+
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    .app-loading {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes bouncing-loader {
+      to {
+        opacity: 0.1;
+        transform: translate3d(0, -1rem, 0);
+      }
+    }
+
+    .app-loading .bouncing-loader {
+      display: flex;
+      justify-content: center;
+    }
+
+    .app-loading .bouncing-loader > div {
+      width: 1rem;
+      height: 1rem;
+      margin: 3rem 0.2rem;
+      background: #C5342F;
+      border-radius: 50%;
+      animation: bouncing-loader 0.6s infinite alternate;
+    }
+
+    .app-loading .bouncing-loader > div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .app-loading .bouncing-loader > div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  </style>
+  <!--<link rel='preload' href='/path/to/stylesheet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">-->
+  <noscript>
+    <!--<link rel="stylesheet" href="path/to/stylesheet.css">-->
+  </noscript>
 </head>
 <body>
-  <app-root></app-root>
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
+<app-root>
+  <div class="app-loading">
+    <div class="bouncing-loader">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</app-root>
+<noscript>Please enable JavaScript to continue using this application.</noscript>
+
+<!-- Optional JavaScript -->
+<!-- End Optional JavaScript -->
 </body>
 </html>

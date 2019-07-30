@@ -146,7 +146,6 @@
           }
         }
       }
-    }
-  },
+    }},
   "defaultProject": "angular-cli-seed"
 }

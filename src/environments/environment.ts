@@ -1,12 +1,22 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+const packageJson = require('../../package.json');
 
 export const environment = {
   production: false,
+  envName: 'DEV',
   i18nPrefix: '',
-  appName: 'APP',
-  API: 'http://localhost:8000/api'
+  appName: 'Angular Cli Seed',
+  appShortName: 'angular',
+  appPrefix: 'ACS',
+  domain: {
+    app: 'http://localhost:4200'
+  },
+  API: 'http://localhost:8000/api',
+  versions: {
+    app: packageJson.version
+  }
 };
 
 /*

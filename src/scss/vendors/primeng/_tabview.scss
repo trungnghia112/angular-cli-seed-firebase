@@ -1,0 +1,79 @@
+.ui-tabview {
+
+  &.ui-tabview-top,
+  &.ui-tabview-bottom,
+  &.ui-tabview-left,
+  &.ui-tabview-right {
+    .ui-tabview-nav {
+      li {
+        a {
+          .ui-tabview-left-icon {
+          }
+          .ui-tabview-right-icon {
+          }
+        }
+        .ui-tabview-close {
+        }
+        &:not(.ui-state-active):not(.ui-state-disabled):hover {
+          a {
+          }
+          .ui-tabview-close {
+          }
+        }
+        &.ui-state-active {
+          a {
+          }
+          .ui-tabview-close {
+          }
+          &:hover {
+            a {
+              .ui-tabview-left-icon {
+              }
+              .ui-tabview-right-icon {
+              }
+            }
+          }
+        }
+        &.ui-tabview-selected {
+          a {
+          }
+        }
+      }
+    }
+  }
+
+  &.ui-tabview-top {
+    .ui-tabview-nav {
+      li {
+      }
+    }
+  }
+
+  &.ui-tabview-bottom {
+    .ui-tabview-nav {
+      li {
+      }
+    }
+  }
+
+  &.ui-tabview-left {
+    .ui-tabview-nav {
+      li {
+      }
+    }
+  }
+
+  &.ui-tabview-right {
+    .ui-tabview-nav {
+      li {
+      }
+    }
+  }
+}
+
+.ui-tabview {
+  .ui-tabview-panels {
+    .ui-tabview-panel {
+    }
+  }
+}

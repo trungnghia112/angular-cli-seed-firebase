@@ -7,7 +7,6 @@ export class SafeHtmlPipe implements PipeTransform {
   }
 
   transform(value: string) {
-    console.log(value);
     return this.sanitized.bypassSecurityTrustHtml(value);
   }
 }

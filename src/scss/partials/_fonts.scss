@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i&display=swap&subset=latin-ext,vietnamese');
+// font-family: 'Open Sans', sans-serif;
+
+@mixin font-pi() {
+  font-family: 'primeicons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

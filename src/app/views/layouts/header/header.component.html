@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <h4 class="h4 m-0 d-none d-lg-block">{{ titleService.title$ | async }}</h4>
+      <button (click)="asideMenuService.show()" class="icon-mobile-toolbar-toggler d-lg-none"><span></span></button>
+    </div>
+    <ul *ngIf="auth.currentUser | async as user" class="navbar-nav-info">
+      <li class="nav-item" ngbDropdown placement="bottom-right">
+        <a class="nav-link d-flex align-items-center" href="#" ngbDropdownToggle id="dropdownProfile">
+          <app-partials-avatar class="mr-2" [user]="user"></app-partials-avatar>
+          <span class="d-lg-block">{{ user.name }}</span>
+        </a>
+        <div class="dropdown-menu-right" ngbDropdownMenu aria-labelledby="dropdownProfile">
+          <a class="dropdown-item" href="#" [routerLink]="['/profile/overview']">Your Profile</a>
+          <div class="dropdown-divider"></div>
+          <a (click)="onSignOut()" class="dropdown-item" href="#">Sign Out</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+

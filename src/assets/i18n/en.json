@@ -1,0 +1,8 @@
+{
+  "app.asideMenu.dashboard": "Dashboard",
+  "app.asideMenu.users": "Users",
+  "app.asideMenu.websites": "Websites",
+  "app.asideMenu.adproviders": "Ad Providers",
+  "app.asideMenu.adsources": "Ad Sources",
+  "app.asideMenu.adunits": "Ad Units"
+}

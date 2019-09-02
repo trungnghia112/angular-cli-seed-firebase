@@ -1,0 +1,16 @@
+.ui-chips > ul.ui-inputtext {
+  .ui-chips-token {
+  }
+  &:not(.ui-state-disabled):hover {
+  }
+  &:not(.ui-state-disabled).ui-state-focus {
+  }
+  .ui-chips-input-token {
+    input {
+      &:hover {
+      }
+      &:focus {
+      }
+    }
+  }
+}

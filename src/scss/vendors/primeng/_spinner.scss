@@ -1,0 +1,20 @@
+.ui-spinner {
+  .ui-spinner-input {
+  }
+  .ui-spinner-button {
+    &.ui-spinner-up {
+    }
+    &.ui-spinner-down {
+    }
+    .ui-spinner-button-icon {
+    }
+  }
+  .ui-fluid & {
+    .ui-spinner-input {
+    }
+    .ui-spinner-button {
+      .ui-spinner-button-icon {
+      }
+    }
+  }
+}

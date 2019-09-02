@@ -1,15 +1,24 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { environment } from '@env/environment';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { environment } from '@env/environment';
+import { DialogModule } from 'primeng/dialog';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+
+import { SharedBoxLoadingComponent } from './components/box-loading/box-loading.component';
+import { SharedBoxNoDataComponent } from './components/box-nodata/box-nodata.component';
+
+import { SharedCardModule } from './components/card/card.module';
+import { SharedNavTabModule } from './components/nav-tab/nav-tab.module';
+import { SharedTableModule } from './components/table/table.module';
+
 import { DirectivesModule } from './directives/directives.module';
 import { PipesModule } from './pipes/pipes.module';
-import { SharedBoxLoadingComponent } from './components/box-loading/box-loading.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(
@@ -20,7 +29,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 const sharedComponents = [
-  SharedBoxLoadingComponent
+  SharedBoxLoadingComponent,
+  SharedBoxNoDataComponent
 ];
 
 @NgModule({
@@ -64,6 +74,11 @@ const sharedComponents = [
 
     // 3rd party
     TranslateModule,
+
+    // modules
+    SharedCardModule,
+    SharedNavTabModule,
+    SharedTableModule,
 
     ...sharedComponents
   ]

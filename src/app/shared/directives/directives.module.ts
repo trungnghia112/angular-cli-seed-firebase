@@ -7,25 +7,24 @@ import { DropZoneDirective } from './drop-zone.directive';
 import { ButtonLoadingDirective } from './button-loading.directive';
 import { ButtonBackDirective } from './button-back.directive';
 
+const directivesArr = [
+  AutofocusInputDirective,
+  ShowAuthedDirective,
+  HrefDirective,
+  DropZoneDirective,
+  ButtonLoadingDirective,
+  ButtonBackDirective
+];
+
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    AutofocusInputDirective,
-    ShowAuthedDirective,
-    HrefDirective,
-    DropZoneDirective,
-    ButtonLoadingDirective,
-    ButtonBackDirective
+    ...directivesArr
   ],
   exports: [
-    AutofocusInputDirective,
-    ShowAuthedDirective,
-    HrefDirective,
-    DropZoneDirective,
-    ButtonLoadingDirective,
-    ButtonBackDirective
+    ...directivesArr
   ]
 })
 export class DirectivesModule {

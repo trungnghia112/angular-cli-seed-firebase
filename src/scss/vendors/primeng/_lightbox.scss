@@ -1,0 +1,19 @@
+.ui-lightbox {
+  .ui-lightbox-caption {
+    .ui-lightbox-caption-text {
+    }
+    .ui-lightbox-close {
+      &:hover {
+      }
+    }
+  }
+  .ui-lightbox-content-wrapper {
+    .ui-lightbox-nav-left,
+    .ui-lightbox-nav-right {
+      &:hover {
+      }
+    }
+    .ui-lightbox-content.ui-lightbox-loading ~ a {}
+  }
+}
+

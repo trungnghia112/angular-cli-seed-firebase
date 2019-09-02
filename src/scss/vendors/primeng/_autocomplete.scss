@@ -1,0 +1,111 @@
+.ui-autocomplete {
+  @include flexbox;
+  position: relative;
+  .ui-autocomplete-dropdown {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-width: 0;
+    z-index: 2;
+    @include plain-hover-focus {
+      background-color: transparent;
+      color: $input-color;
+    }
+    .pi-caret-down:before {
+      content: "\e902";
+    }
+  }
+  .ui-autocomplete-input {
+  }
+  &.ui-autocomplete-multiple {
+    .ui-autocomplete-multiple-container {
+      &:not(.ui-state-disabled):hover {
+      }
+      &:not(.ui-state-disabled).ui-state-focus {
+      }
+
+      &.ui-inputtext {
+        height: auto;
+        min-height: $input-height;
+        padding: 0.15rem 1rem 0.65rem;
+      }
+
+      .ui-autocomplete-input-token {
+        padding: 0;
+        margin: 0.54rem 0 0;
+        input {
+        }
+      }
+      .ui-autocomplete-token {
+        font-size: 1rem;
+        border-radius: 2px;
+        margin: 0.54rem 0.5rem 0 0;
+        padding: 0 5px;
+        @include inline-flex;
+        @include align-items(center);
+        background-color: $secondary;
+        color: #ffffff;
+      }
+      .ui-autocomplete-token-label {
+        margin: 0;
+      }
+      .ui-autocomplete-token-icon {
+        position: initial;
+        margin: 0 -3px 0 0;
+        padding: 0;
+        @include order(2);
+      }
+    }
+  }
+}
+
+.ui-autocomplete-panel {
+  background-color: #ffffff;
+  .ui-autocomplete-items {
+    .ui-autocomplete-list-item {
+      &.ui-state-highlight {
+      }
+    }
+    .ui-autocomplete-group {
+    }
+  }
+  .ui-autocomplete-list {
+    padding: $dropdown-padding-y 0;
+  }
+  .ui-autocomplete-list-item {
+    display: block;
+    width: 100%; // For `<button>`s
+    padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+    clear: both;
+    font-weight: $font-weight-normal;
+    color: $dropdown-link-color;
+    text-align: inherit; // For `<button>`s
+    white-space: nowrap; // prevent links from randomly breaking onto new lines
+    background-color: transparent; // For `<button>`s
+    border: 0; // For `<button>`s
+    @include hover-focus {
+      color: $dropdown-link-hover-color;
+      text-decoration: none;
+      @include gradient-bg($dropdown-link-hover-bg);
+    }
+  }
+}
+
+.ui-fluid {
+  .ui-autocomplete {
+    .ui-autocomplete-dropdown.ui-button {
+
+    }
+    &.ui-autocomplete-multiple {
+      &.ui-autocomplete-dd {
+        .ui-autocomplete-multiple-container {
+        }
+      }
+    }
+    &.ui-autocomplete-dd {
+      .ui-inputtext {
+      }
+    }
+  }
+}

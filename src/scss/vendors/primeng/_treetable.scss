@@ -1,0 +1,55 @@
+.ui-treetable {
+  .ui-treetable-caption,
+  .ui-treetable-summary {
+  }
+  .ui-treetable-caption {
+  }
+  .ui-treetable-summary {
+  }
+  .ui-treetable-thead > tr > th {
+  }
+  .ui-treetable-t > tr > td {
+  }
+  .ui-treetable-tfoot > tr > td {
+  }
+  .ui-sortable-column {
+    .ui-sortable-column-icon {
+    }
+    &:not(.ui-state-highlight):hover {
+      .ui-sortable-column-icon {
+      }
+    }
+    &.ui-state-highlight {
+      .ui-sortable-column-icon {
+      }
+    }
+    input {
+      &:focus {
+      }
+    }
+  }
+  .ui-treetable-t > tr {
+    > td {
+      .ui-treetable-toggler {
+      }
+      .ui-treetable-chkbox {
+      }
+    }
+    &.ui-state-highlight {
+      > td {
+        .ui-treetable-toggler {
+        }
+      }
+    }
+    &.ui-contextmenu-selected {
+      > td {
+        .ui-treetable-toggler {
+        }
+      }
+    }
+  }
+  &.ui-treetable-hoverable-rows .ui-treetable-t > tr:not(.ui-state-highlight):not(.ui-contextmenu-selected):hover {
+  }
+  .ui-column-resizer-helper {
+  }
+}

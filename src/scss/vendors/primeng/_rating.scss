@@ -1,0 +1,14 @@
+.ui-rating {
+  a {
+    .ui-rating-cancel {
+    }
+    .ui-rating-icon {
+    }
+  }
+  &:not(.ui-state-disabled):not(.ui-rating-readonly) a {
+    :hover {
+    }
+    &.ui-rating-cancel:hover {
+    }
+  }
+}

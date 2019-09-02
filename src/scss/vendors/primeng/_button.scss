@@ -1,0 +1,53 @@
+p-button,
+p-button[type="button"], // 1
+p-button[type="reset"],
+p-button[type="submit"] {
+  -webkit-appearance: initial; // 2
+}
+
+.ui-button {
+  @extend .btn;
+  &.ui-state-default {
+    @extend .btn-secondary;
+  }
+}
+
+.ui-button-icon-only .ui-button-text,
+.ui-button-text-empty .ui-button-text {
+  padding: 0;
+}
+
+.ui-button-text-icon-left .ui-button-icon-left,
+.ui-button-text-icon-right .ui-button-icon-right {
+  position: initial;
+  margin: 0;
+  padding: 0;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  height: auto;
+}
+
+.ui-button-text-icon-left .ui-button-icon-left {
+  margin-right: 5px;
+}
+
+.ui-button-text-icon-right .ui-button-icon-right {
+  @include order(2);
+  margin-left: 5px;
+}
+
+.ui-button-text-icon-left,
+.ui-button-text-icon-right {
+  @include inline-flex;
+  @include align-items(center);
+
+  .ui-button-text {
+    padding: 0;
+  }
+}
+
+.ui-button-icon-only {
+  @extend .btn-icon;
+}

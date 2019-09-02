@@ -1,0 +1,26 @@
+.ui-growl {
+  .ui-growl-item-container {
+    .ui-growl-item {
+      .ui-growl-message {
+      }
+      .ui-growl-image {
+      }
+    }
+    &.ui-growl-message-info {
+      .ui-growl-image {
+      }
+    }
+    &.ui-growl-message-success {
+      .ui-growl-image {
+      }
+    }
+    &.ui-growl-message-warn {
+      .ui-growl-image {
+      }
+    }
+    &.ui-growl-message-error {
+      .ui-growl-image {
+      }
+    }
+  }
+}

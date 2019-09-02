@@ -1,0 +1,10 @@
+.ui-inplace {
+  .ui-inplace-display {
+    &:not(.ui-state-disabled):hover {
+    }
+  }
+  .ui-fluid & {
+    &.ui-inplace-closable .ui-inplace-content > :first-child {
+    }
+  }
+}

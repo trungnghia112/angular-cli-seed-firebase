@@ -1,0 +1,28 @@
+.ui-listbox {
+  .ui-chkbox {
+  }
+  .ui-listbox-header {
+    .ui-listbox-filter-container {
+      input {
+      }
+      .ui-listbox-filter-icon {
+      }
+    }
+  }
+  .ui-listbox-list {
+    .ui-listbox-item {
+      &.ui-state-highlight {
+      }
+      .ui-chkbox {
+      }
+      label {
+      }
+    }
+  }
+  &:not(.ui-state-disabled) .ui-listbox-item:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+  }
+  &.ui-state-disabled .ui-chkbox-box:not(.ui-state-disabled):not(.ui-state-active):hover {
+  }
+  .ui-listbox-footer {
+  }
+}

@@ -1,0 +1,29 @@
+
+.ui-inputgroup {
+  .ui-inputgroup-addon {
+    &:first-child {
+    }
+    &:last-child {
+    }
+    &.ui-inputgroup-addon-checkbox {
+      .ui-chkbox {
+      }
+    }
+    &.ui-inputgroup-addon-radiobutton {
+      .ui-radiobutton {
+      }
+    }
+  }
+  .ui-button {
+    &:first-child {
+    }
+    &:last-child {
+    }
+  }
+  .ui-fluid & {
+    .ui-button {
+      &.ui-button-icon-only {
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+ui-tree {
+  .ui-tree-container {
+    .ui-treenode {
+      .ui-treenode-content {
+        .ui-tree-toggler {
+        }
+        .ui-treenode-icon {
+        }
+        .ui-treenode-label {
+          &.ui-state-highlight {
+          }
+        }
+        .ui-chkbox {
+          .ui-chkbox-icon {
+          }
+        }
+        &.ui-treenode-selectable {
+          .ui-treenode-label:not(.ui-state-highlight):hover {
+          }
+        }
+        > span {
+        }
+        &.ui-treenode-dragover {
+        }
+      }
+    }
+    .ui-treenode-droppoint {
+      &.ui-treenode-droppoint-active {
+      }
+    }
+  }
+  &.ui-tree-horizontal {
+    .ui-treenode {
+      .ui-treenode-content {
+        &.ui-state-highlight {
+        }
+        .ui-chkbox {
+          .ui-icon {
+          }
+        }
+        .ui-treenode-label:not(.ui-state-highlight):hover {
+        }
+        &.ui-treenode-selectable:not(.ui-state-highlight):hover {
+        }
+      }
+    }
+  }
+
+  .ui-tree-filter-container {
+    .ui-tree-filter {
+    }
+    .ui-tree-filter-icon {
+    }
+  }
+}

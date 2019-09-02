@@ -1,0 +1,24 @@
+
+.ui-steps {
+  .ui-steps-item {
+    .ui-menuitem-link {
+      .ui-steps-number {
+      }
+      .ui-steps-title {
+      }
+    }
+    &.ui-state-highlight {
+      .ui-steps-number {
+      }
+      .ui-steps-title {
+      }
+    }
+    &:last-child {
+      .ui-menuitem-link {
+      }
+    }
+  }
+  &:before {
+  }
+}
+

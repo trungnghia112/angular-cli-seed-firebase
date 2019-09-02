@@ -1,0 +1,54 @@
+.ui-messages {
+  &.ui-messages-info {
+    .ui-messages-icon {
+    }
+    .ui-messages-close {
+    }
+  }
+  &.ui-messages-success {
+    .ui-messages-icon {
+    }
+    .ui-messages-close {
+    }
+  }
+  &.ui-messages-warn {
+    .ui-messages-icon {
+    }
+    .ui-messages-close {
+    }
+  }
+  &.ui-messages-error {
+    .ui-messages-icon {
+    }
+    .ui-messages-close {
+    }
+  }
+  .ui-messages-close {
+  }
+  .ui-messages-icon {
+  }
+}
+
+.ui-message {
+  .ui-message-info {
+    .ui-message-icon {
+    }
+  }
+  .ui-message-success {
+    .ui-message-icon {
+    }
+  }
+  .ui-message-warn {
+    .ui-message-icon {
+    }
+  }
+  .ui-message-error {
+    .ui-message-icon {
+    }
+  }
+
+  .ui-message-icon {
+  }
+  .ui-message-text {
+  }
+}

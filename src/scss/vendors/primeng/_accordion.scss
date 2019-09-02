@@ -1,0 +1,26 @@
+.ui-accordion {
+  .ui-accordion-header {
+    a {
+      .ui-accordion-toggle-icon {
+      }
+    }
+    &:not(.ui-state-active):not(.ui-state-disabled):hover a {
+      .ui-accordion-toggle-icon {
+      }
+    }
+    &:not(.ui-state-disabled).ui-state-active {
+      a {
+        .ui-accordion-toggle-icon {
+        }
+      }
+      &:hover {
+        a {
+          .ui-accordion-toggle-icon {
+          }
+        }
+      }
+    }
+  }
+  .ui-accordion-content {
+  }
+}

@@ -1,0 +1,357 @@
+/*
+Widgets
+
+Markup:
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-header-title">Download Files</h3>
+        <div class="card-header-toolbar">
+          <div class="btn-group">
+            <button class="btn btn-clean btn-icon" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-ellipsis-h"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <ul class="list-style list-style-flush">
+          <li class="list-style-item">
+            <span class="list-style-item-icon"><img src="/images/media/files/doc.svg" alt=""></span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Lorem ipsum dolor sit amet</a>
+            </div>
+            <div class="list-style-item-actions">
+              <button class="btn btn-clean"><i class="fa fa-file-download"></i></button>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="list-style-item-icon"><img src="/images/media/files/jpg.svg" alt=""></span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Lorem ipsum dolor sit amet</a>
+            </div>
+            <div class="list-style-item-actions">
+              <button class="btn btn-clean"><i class="fa fa-file-download"></i></button>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="list-style-item-icon"><img src="/images/media/files/pdf.svg" alt=""></span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Lorem ipsum dolor sit amet</a>
+            </div>
+            <div class="list-style-item-actions">
+              <button class="btn btn-clean"><i class="fa fa-file-download"></i></button>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="list-style-item-icon"><img src="/images/media/files/javascript.svg" alt=""></span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Lorem ipsum dolor sit amet</a>
+            </div>
+            <div class="list-style-item-actions">
+              <button class="btn btn-clean"><i class="fa fa-file-download"></i></button>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="list-style-item-icon"><img src="/images/media/files/zip.svg" alt=""></span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Lorem ipsum dolor sit amet</a>
+            </div>
+            <div class="list-style-item-actions">
+              <button class="btn btn-clean"><i class="fa fa-file-download"></i></button>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="list-style-item-icon"><img src="/images/media/files/pdf.svg" alt=""></span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Lorem ipsum dolor sit amet</a>
+            </div>
+            <div class="list-style-item-actions">
+              <button class="btn btn-clean"><i class="fa fa-file-download"></i></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-header-title">New Users</h3>
+        <div class="card-header-toolbar">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#card_tab_1_1" role="tab" aria-selected="false">
+                Today
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#card_tab_1_2" role="tab" aria-selected="false">
+                Month
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-body">
+        <ul class="list-style list-style-flush">
+          <li class="list-style-item">
+            <span class="userpic mr-3">
+              <img src="/dummy/media/users/100_1.jpg" alt="image">
+            </span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Anna Strong</a>
+              <p class="mb-0">Visual Designer,Google Inc</p>
+            </div>
+            <div class="list-style-item-actions">
+              <button class="btn btn-sm btn-label-brand">Follow</button>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="userpic mr-3">
+              <img src="/dummy/media/users/100_1.jpg" alt="image">
+            </span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Anna Strong</a>
+              <p class="mb-0">Visual Designer,Google Inc</p>
+            </div>
+            <div class="list-style-item-actions">
+              <button class="btn btn-sm btn-label-brand">Follow</button>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="userpic mr-3">
+              <img src="/dummy/media/users/100_1.jpg" alt="image">
+            </span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Anna Strong</a>
+              <p class="mb-0">Visual Designer,Google Inc</p>
+            </div>
+            <div class="list-style-item-actions">
+              <button class="btn btn-sm btn-label-brand">Follow</button>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="userpic mr-3">
+              <img src="/dummy/media/users/100_1.jpg" alt="image">
+            </span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Anna Strong</a>
+              <p class="mb-0">Visual Designer,Google Inc</p>
+            </div>
+            <div class="list-style-item-actions">
+              <button class="btn btn-sm btn-label-brand">Follow</button>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="userpic mr-3">
+              <img src="/dummy/media/users/100_1.jpg" alt="image">
+            </span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Anna Strong</a>
+              <p class="mb-0">Visual Designer,Google Inc</p>
+            </div>
+            <div class="list-style-item-actions">
+              <button class="btn btn-sm btn-label-brand">Follow</button>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="userpic mr-3">
+              <img src="/dummy/media/users/100_1.jpg" alt="image">
+            </span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Anna Strong</a>
+              <p class="mb-0">Visual Designer,Google Inc</p>
+            </div>
+            <div class="list-style-item-actions">
+              <button class="btn btn-sm btn-label-brand">Follow</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-header-title">Authors Profit</h3>
+        <div class="card-header-toolbar">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#card_tab_1_1" role="tab" aria-selected="false">
+                Today
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#card_tab_1_2" role="tab" aria-selected="false">
+                Month
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-body">
+        <ul class="list-style list-style-flush">
+          <li class="list-style-item">
+            <span class="userpic userpic-circle mr-3">
+              <img src="/dummy/media/users/100_1.jpg" alt="image">
+            </span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Anna Strong</a>
+              <p class="mb-0">Visual Designer,Google Inc</p>
+            </div>
+            <div class="list-style-item-actions">
+              <span class="text-brand font-weight-bold">+$2500</span>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="userpic userpic-circle mr-3">
+              <img src="/dummy/media/users/100_1.jpg" alt="image">
+            </span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Anna Strong</a>
+              <p class="mb-0">Visual Designer,Google Inc</p>
+            </div>
+            <div class="list-style-item-actions">
+              <span class="text-brand font-weight-bold">+$2500</span>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="userpic userpic-circle mr-3">
+              <img src="/dummy/media/users/100_1.jpg" alt="image">
+            </span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Anna Strong</a>
+              <p class="mb-0">Visual Designer,Google Inc</p>
+            </div>
+            <div class="list-style-item-actions">
+              <span class="text-brand font-weight-bold">+$2500</span>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="userpic userpic-circle mr-3">
+              <img src="/dummy/media/users/100_1.jpg" alt="image">
+            </span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Anna Strong</a>
+              <p class="mb-0">Visual Designer,Google Inc</p>
+            </div>
+            <div class="list-style-item-actions">
+              <span class="text-brand font-weight-bold">+$2500</span>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="userpic userpic-circle mr-3">
+              <img src="/dummy/media/users/100_1.jpg" alt="image">
+            </span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Anna Strong</a>
+              <p class="mb-0">Visual Designer,Google Inc</p>
+            </div>
+            <div class="list-style-item-actions">
+              <span class="text-brand font-weight-bold">+$2500</span>
+            </div>
+          </li>
+          <li class="list-style-item">
+            <span class="userpic userpic-circle mr-3">
+              <img src="/dummy/media/users/100_1.jpg" alt="image">
+            </span>
+            <div class="list-style-item-body">
+              <a class="list-style-item-heading" href="#">Anna Strong</a>
+              <p class="mb-0">Visual Designer,Google Inc</p>
+            </div>
+            <div class="list-style-item-actions">
+              <span class="text-brand font-weight-bold">+$2500</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card-group-lg mb-3">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h5 class="card-title">Total Profit</h5>
+          <p class="card-text text-muted">All Customs Value</p>
+        </div>
+        <span class="h2 text-brand">$18M</span>
+      </div>
+      <div class="progress progress-sm mt-4 mb-1">
+        <div class="progress-bar bg-brand" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <span class="text-muted">Change</span>
+        <span class="text-muted">50%</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h5 class="card-title">New Feedbacks</h5>
+          <p class="card-text text-muted">Customer Review</p>
+        </div>
+        <span class="h2 text-warning">1349</span>
+      </div>
+      <div class="progress progress-sm mt-4 mb-1">
+        <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <span class="text-muted">Change</span>
+        <span class="text-muted">50%</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h5 class="card-title">New Orders</h5>
+          <p class="card-text text-muted">Fresh Order Amount</p>
+        </div>
+        <span class="h2 text-success">567</span>
+      </div>
+      <div class="progress progress-sm mt-4 mb-1">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <span class="text-muted">Change</span>
+        <span class="text-muted">50%</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h5 class="card-title">New Users</h5>
+          <p class="card-text text-muted">Joined New User</p>
+        </div>
+        <span class="h2 text-primary">276</span>
+      </div>
+      <div class="progress progress-sm mt-4 mb-1">
+        <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <span class="text-muted">Change</span>
+        <span class="text-muted">50%</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+Weight: 100
+
+Styleguide Modules.widgets
+
+*/

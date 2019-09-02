@@ -1,0 +1,49 @@
+.ui-fileupload {
+  .ui-fileupload-buttonbar {
+    padding: 20px;
+    border: 2px dashed #ebedf2;
+    border-bottom-width: 0;
+    .ui-button {
+      @extend .btn-brand;
+      margin-right: 8px;
+    }
+  }
+  .ui-fileupload-content {
+    border: 2px dashed #ebedf2;
+    padding: 20px;
+    border-radius: 4px;
+    position: relative;
+    .fileUpload-zone-message {
+      text-align: center;
+
+      &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        cursor: pointer;
+      }
+    }
+    .ui-fileupload-files {
+      & + .fileUpload-zone-message {
+        display: none;
+      }
+    }
+  }
+}
+
+.ui-fileupload-choose {
+  //@extend .btn-brand;
+}
+
+.fileUpload-no-header {
+  .ui-fileupload-buttonbar {
+    display: none;
+  }
+}
+
+.ui-fileupload-row > div:empty {
+  padding: 0;
+}

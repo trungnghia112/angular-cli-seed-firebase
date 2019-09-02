@@ -1,0 +1,102 @@
+.ui-paginator {
+  @extend .pagination;
+  .ui-paginator-first,
+  .ui-paginator-prev,
+  .ui-paginator-next,
+  .ui-paginator-last {
+    font-size: 0.6rem;
+  }
+
+  .ui-paginator-page,
+  .ui-paginator-pages,
+  .ui-paginator-next,
+  .ui-paginator-last,
+  .ui-paginator-first,
+  .ui-paginator-prev,
+  .ui-paginator-current {
+    height: auto;
+    margin-right: 0;
+  }
+
+  .ui-paginator-pages {
+    margin: 0 5px;
+    @include flexbox;
+    .ui-paginator-page {
+      font-size: $font-size-base;
+      background-color: transparent;
+    }
+  }
+  .ui-paginator-element {
+    @extend .page-link;
+    height: auto;
+
+    & + .ui-paginator-element {
+      margin-left: 5px;
+    }
+    &:hover {
+      z-index: 2;
+      color: $pagination-hover-color;
+      text-decoration: none;
+      background-color: $pagination-hover-bg;
+      border-color: $pagination-hover-border-color;
+    }
+
+    &:focus {
+      z-index: 2;
+      outline: $pagination-focus-outline;
+      box-shadow: $pagination-focus-box-shadow;
+    }
+    &.ui-state-active {
+      z-index: 1;
+      color: $pagination-active-color;
+      background-color: $pagination-active-bg;
+      border-color: $pagination-active-border-color;
+    }
+    &.ui-state-disabled {
+      color: $pagination-disabled-color;
+      pointer-events: none;
+      // Opinionated: remove the "hand" cursor set previously for .page-link
+      background-color: $pagination-disabled-bg;
+      border-color: $pagination-disabled-border-color;
+
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+  .ui-paginator-last {
+    margin-right: auto;
+  }
+  .ui-inputwrapper-filled {
+    width: auto;
+    @include inline-flex;
+    @include align-items(center);
+    .ui-dropdown-label {
+      height: auto;
+      font-size: $font-size-base;
+      color: $pagination-color;
+      padding-top: $pagination-padding-y;
+      padding-bottom: $pagination-padding-y;
+      padding-left: $pagination-padding-x;
+      line-height: $pagination-line-height;
+      border-width: 0;
+      background-color: $pagination-bg;
+    }
+    .ui-dropdown-trigger {
+      color: $pagination-color;
+    }
+  }
+  .ui-paginator-right-content {
+    @include flexbox;
+    @include align-items(center);
+    margin-left: 10px;
+  }
+}
+
+.card-body-fit {
+  .ui-paginator {
+    margin: 0;
+    padding: #{$card-spacer-x} #{$card-spacer-x} 0;
+    border-top: $card-border-width solid $card-border-color;
+    border-radius: 0;
+  }
+}

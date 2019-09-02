@@ -1,0 +1,45 @@
+
+.fc {
+  th {
+  }
+  td {
+    &.ui-widget-content {
+    }
+    &.fc-head-container {
+    }
+  }
+  .fc-row {
+  }
+  .fc-event {
+  }
+  .fc-toolbar {
+    .fc-button {
+      &:enabled:hover {
+      }
+      .fc-icon-chevron-left {
+        &:before {
+        }
+      }
+      .fc-icon-chevron-right {
+        &:before {
+        }
+      }
+      &:focus {
+      }
+    }
+    .fc-button-group {
+      .fc-button {
+        &:first-child {
+        }
+        &:last-child {
+        }
+      }
+    }
+  }
+  .fc-divider {
+  }
+  .ui-fluid & {
+    .fc-toolbar .fc-button {
+    }
+  }
+}

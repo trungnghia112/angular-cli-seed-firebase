@@ -25,6 +25,12 @@
       "@shared/*": [
         "src/app/shared/*"
       ],
+      "@partials/*": [
+        "src/app/views/partials/*"
+      ],
+      "@pages/*": [
+        "src/app/views/pages/*"
+      ],
       "@env/*": [
         "src/environments/*"
       ],

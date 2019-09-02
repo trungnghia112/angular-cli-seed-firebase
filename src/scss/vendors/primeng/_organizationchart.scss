@@ -1,0 +1,23 @@
+.ui-organizationchart {
+  .ui-organizationchart-node-content {
+    &.ui-organizationchart-selectable-node:not(.ui-state-highlight):hover {
+    }
+    &.ui-state-highlight {
+      .ui-node-toggler {
+        i {
+        }
+      }
+    }
+  }
+
+  .ui-organizationchart-line-down {
+  }
+  .ui-organizationchart-line-left {
+  }
+  .ui-organizationchart-line-top {
+  }
+  .ui-organizationchart-node-content {
+    .ui-node-toggler {
+    }
+  }
+}

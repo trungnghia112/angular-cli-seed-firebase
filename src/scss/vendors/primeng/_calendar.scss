@@ -1,0 +1,16 @@
+
+.ui-calendar.ui-calendar-w-btn {
+  .ui-inputtext {
+    &:enabled:hover:not(.ui-state-error),
+    &:enabled:focus:not(.ui-state-error) {
+
+    }
+  }
+  .ui-datepicker-trigger.ui-button {
+  }
+  .ui-fluid & {
+    input.ui-inputtext {
+
+    }
+  }
+}

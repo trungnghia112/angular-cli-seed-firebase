@@ -1,0 +1,133 @@
+/*
+List Style
+
+List Style are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within.
+
+Weight: 1
+
+Styleguide Modules.list-style
+ */
+
+.list-style {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  @include flexbox;
+  @include flex-direction(column);
+  .list-style-item {
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(center);
+    padding-top: $list-group-item-padding-y;
+    padding-bottom: $list-group-item-padding-y;
+  }
+  .list-style-item-icon {
+    width: 38px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    & + .list-style-item-body {
+      margin-left: 1rem;
+    }
+  }
+  .list-style-item-body {
+    @include flex(1);
+    color: $text-muted;
+    & + .list-style-item-icon {
+      margin-left: 1rem;
+    }
+    & + .list-style-item-actions {
+      margin-left: 1rem;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+  .list-style-item-heading {
+    color: $body-color;
+    font-weight: $font-weight-bold;
+  }
+}
+
+/*
+Flush
+
+Add .list-style-flush to add border to render list style items edge-to-edge in a parent container (e.g., cards).
+
+Markup:
+<ul class="list-style list-style-flush">
+  <li class="list-style-item">Cras justo odio</li>
+  <li class="list-style-item">Dapibus ac facilisis in</li>
+  <li class="list-style-item">Morbi leo risus</li>
+  <li class="list-style-item">Porta ac consectetur ac</li>
+  <li class="list-style-item">Vestibulum at eros</li>
+</ul>
+<ul class="list-style list-style-flush" style="width: 40rem">
+  <li class="list-style-item">
+    <span class="list-style-item-icon"><img src="/images/media/files/doc.svg" alt=""></span>
+    <div class="list-style-item-body">
+      <a class="list-style-item-heading" href="#">Lorem ipsum dolor sit amet</a>
+    </div>
+    <div class="list-style-item-actions">
+      <button class="btn btn-clean"><i class="fa fa-file-download"></i></button>
+    </div>
+  </li>
+  <li class="list-style-item">
+    <span class="list-style-item-icon"><img src="/images/media/files/jpg.svg" alt=""></span>
+    <div class="list-style-item-body">
+      <a class="list-style-item-heading" href="#">Lorem ipsum dolor sit amet</a>
+    </div>
+    <div class="list-style-item-actions">
+      <button class="btn btn-clean"><i class="fa fa-file-download"></i></button>
+    </div>
+  </li>
+  <li class="list-style-item">
+    <span class="list-style-item-icon"><img src="/images/media/files/pdf.svg" alt=""></span>
+    <div class="list-style-item-body">
+      <a class="list-style-item-heading" href="#">Lorem ipsum dolor sit amet</a>
+    </div>
+    <div class="list-style-item-actions">
+      <button class="btn btn-clean"><i class="fa fa-file-download"></i></button>
+    </div>
+  </li>
+  <li class="list-style-item">
+    <span class="list-style-item-icon"><img src="/images/media/files/javascript.svg" alt=""></span>
+    <div class="list-style-item-body">
+      <a class="list-style-item-heading" href="#">Lorem ipsum dolor sit amet</a>
+    </div>
+    <div class="list-style-item-actions">
+      <button class="btn btn-clean"><i class="fa fa-file-download"></i></button>
+    </div>
+  </li>
+  <li class="list-style-item">
+    <span class="list-style-item-icon"><img src="/images/media/files/zip.svg" alt=""></span>
+    <div class="list-style-item-body">
+      <a class="list-style-item-heading" href="#">Lorem ipsum dolor sit amet</a>
+    </div>
+    <div class="list-style-item-actions">
+      <button class="btn btn-clean"><i class="fa fa-file-download"></i></button>
+    </div>
+  </li>
+  <li class="list-style-item">
+    <span class="list-style-item-icon"><img src="/images/media/files/pdf.svg" alt=""></span>
+    <div class="list-style-item-body">
+      <a class="list-style-item-heading" href="#">Lorem ipsum dolor sit amet</a>
+    </div>
+    <div class="list-style-item-actions">
+      <button class="btn btn-clean"><i class="fa fa-file-download"></i></button>
+    </div>
+  </li>
+</ul>
+
+Weight: 1
+
+Styleguide Modules.list-style.flush
+ */
+
+.list-style-flush {
+  .list-style-item {
+    & + .list-style-item {
+      border-top: $list-group-border-width dashed $list-group-border-color;;
+    }
+  }
+}

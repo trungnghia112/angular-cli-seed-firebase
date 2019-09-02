@@ -1,0 +1,26 @@
+.ui-carousel {
+  .ui-carousel-header {
+    .ui-carousel-header-title {
+    }
+  }
+  .ui-carousel-viewport {
+    .ui-carousel-items .ui-carousel-item {
+    }
+  }
+  .ui-carousel-footer {
+  }
+  .ui-carousel-button {
+    &.ui-carousel-next-button:before {
+    }
+    &.ui-carousel-prev-button:before {
+    }
+    &:not(.ui-state-disabled):hover {
+    }
+  }
+  .ui-carousel-page-links {
+    .ui-carousel-page-link {
+      &:hover {
+      }
+    }
+  }
+}

@@ -24,6 +24,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
         tap((el) => console.log('Process ' + el),
           err => {
             if (err instanceof HttpErrorResponse) {
+              console.log('err:', err);
               const appErrorHandler = this.injector.get(ErrorHandler);
               appErrorHandler.handleError(err);
             }

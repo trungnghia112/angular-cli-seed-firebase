@@ -1,0 +1,94 @@
+.ui-inputwrapper-filled {
+  display: block;
+  width: 100%;
+}
+
+.ui-multiselect {
+  display: block;
+  width: 100%;
+  &:not(.ui-state-disabled) {
+    &:hover {
+    }
+    &.ui-state-focus {
+    }
+  }
+  .ui-multiselect-label {
+    @extend .form-control;
+    white-space: nowrap;
+    padding-right: calc(#{$btn-line-height * 1em} + #{$btn-padding-y * 2} + #{$btn-border-width * 2});
+  }
+  .ui-multiselect-trigger {
+    width: calc(#{$btn-line-height * 1em} + #{$btn-padding-y * 2} + #{$btn-border-width * 2});
+    .ui-multiselect-trigger-icon {
+      color: $input-color;
+    }
+  }
+}
+
+.ui-multiselect-panel {
+  background-color: $dropdown-bg;
+  .ui-multiselect-header {
+    @include flexbox;
+    @include align-items(center);
+    .ui-multiselect-filter-container {
+      @include flex(1);
+      @include flexbox;
+      @include align-items(center);
+      margin: 0 10px;
+      width: auto;
+      .ui-inputtext {
+        padding: $input-btn-padding-y $input-btn-padding-x;
+        padding-right: calc(#{$btn-line-height * 1em} + #{$btn-padding-y * 2} + #{$btn-border-width * 2});
+      }
+      .ui-multiselect-filter-icon {
+        width: calc(#{$btn-line-height * 1em} + #{$btn-padding-y * 2} + #{$btn-border-width * 2});
+        text-align: center;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: auto;
+        &:before {
+          @include center();
+        }
+      }
+    }
+    .ui-chkbox {
+    }
+    .ui-multiselect-close {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: calc(#{$btn-line-height * 1em} + #{$btn-padding-y * 2} + #{$btn-border-width * 2});
+      height: calc(#{$btn-line-height * 1em} + #{$btn-padding-y * 2} + #{$btn-border-width * 2});
+      span {
+        @include center();
+      }
+      &:hover {
+      }
+    }
+  }
+  .ui-multiselect-items {
+    .ui-multiselect-item {
+      &.ui-state-highlight {
+      }
+      &:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+      }
+      &.ui-state-disabled {
+        .ui-chkbox-box {
+          &:hover {
+          }
+          &.ui-state-active {
+            &:hover {
+            }
+          }
+        }
+      }
+      .ui-chkbox {
+      }
+      label {
+      }
+    }
+  }
+}

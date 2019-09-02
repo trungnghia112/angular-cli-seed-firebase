@@ -1,6 +1,10 @@
 export interface User {
-  uid: string;
-  email?: string | null;
-  photoURL?: string;
-  displayName?: string;
+  id: number;
+  name: string;
+  email: string;
+  avatar: string;
+  created_at: Date;
+  updated_at: Date;
+  deleted_at?: Date | null;
+  token: string;
 }

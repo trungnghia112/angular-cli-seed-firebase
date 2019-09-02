@@ -1,0 +1,7 @@
+<button (click)="asideMenuService.hide()" class="btn btn-icon btn-square btn-secondary aside-menu-close d-lg-none">
+  <i class="la la-close"></i>
+</button>
+<a class="aside-menu-logo" href="#" [routerLink]="['/']">
+  <img src="/assets/images/logo.png" alt="">
+</a>
+<p-panelMenu class="d-block aside-menu-panel" [multiple]="false" [model]="items"></p-panelMenu>

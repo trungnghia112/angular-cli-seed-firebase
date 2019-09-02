@@ -2,13 +2,20 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  // { path: 'about', component: AboutPageComponent },
-  // { path: 'right', component: RightPageComponent, data: { animation: 'isRight' } },
-  // { path: 'left', component: LeftPageComponent, data: { animation: 'isLeft' } },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./views/pages/auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./views/pages/pages.module').then(m => m.PagesModule)
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

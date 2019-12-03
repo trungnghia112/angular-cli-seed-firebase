@@ -1,8 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
-import { NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent, RouterOutlet } from '@angular/router';
-import { stepper } from '@core/animations/route-animations';
 import { AuthService } from '@core/services/auth.service';
 import { TitleService } from '@core/services/title.service';
 import { TranslateService } from '@ngx-translate/core';

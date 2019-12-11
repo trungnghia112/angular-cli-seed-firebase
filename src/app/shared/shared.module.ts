@@ -7,14 +7,13 @@ import { environment } from '@env/environment';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { DialogModule } from 'primeng/dialog';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { SharedBoxLoadingComponent } from './components/box-loading/box-loading.component';
 import { SharedBoxNoDataComponent } from './components/box-nodata/box-nodata.component';
 
 import { SharedCardModule } from './components/card/card.module';
 import { SharedNavTabModule } from './components/nav-tab/nav-tab.module';
+import { SharedSplashScreenComponent } from './components/splash-screen/splash-screen.component';
 import { SharedTableModule } from './components/table/table.module';
 
 import { DirectivesModule } from './directives/directives.module';
@@ -30,7 +29,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 const sharedComponents = [
   SharedBoxLoadingComponent,
-  SharedBoxNoDataComponent
+  SharedBoxNoDataComponent,
+  SharedSplashScreenComponent
 ];
 
 @NgModule({

@@ -39,6 +39,7 @@
     "@angular/router": "~8.2.14",
     "@angular/service-worker": "~8.2.14",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
+    "@nguniversal/aspnetcore-engine": "^8.2.6",
     "@nguniversal/express-engine": "^8.1.1",
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
     "@ngx-translate/core": "^11.0.1",
@@ -53,8 +54,8 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.803.20",
-    "@angular/cli": "~8.3.20",
+    "@angular-devkit/build-angular": "~0.803.21",
+    "@angular/cli": "~8.3.21",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
     "@compodoc/compodoc": "^1.1.11",

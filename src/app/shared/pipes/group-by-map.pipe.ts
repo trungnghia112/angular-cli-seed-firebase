@@ -6,7 +6,7 @@
 //  </ul>
 // </div>
 
-import { Pipe, PipeTransform } from '@angular/core';
+/*import { Pipe, PipeTransform } from '@angular/core';
 
 import * as _ from 'lodash';
 
@@ -25,4 +25,4 @@ export class GroupByMapPipe implements PipeTransform {
     return _.orderBy(result, ['key'], [orderBy]);
   }
 
-}
+}*/

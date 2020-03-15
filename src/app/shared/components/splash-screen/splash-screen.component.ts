@@ -1,5 +1,5 @@
 import { animate, animateChild, query, style, transition, trigger } from '@angular/animations';
-import { ApplicationRef, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { PwaService } from '@core/services/pwa.service';
 
 @Component({
@@ -13,8 +13,8 @@ import { PwaService } from '@core/services/pwa.service';
     // the fade-in/fade-out animation.
     trigger('fadeOut', [
       transition(':leave', [
-        query(':leave', animateChild(), { optional: true }),
-        animate(300, style({ opacity: 0 }))
+        query(':leave', animateChild(), {optional: true}),
+        animate(300, style({opacity: 0}))
       ])
     ])
   ],
@@ -37,7 +37,7 @@ export class SharedSplashScreenComponent implements OnInit {
   constructor(
     private pwaService: PwaService,
     private cdr: ChangeDetectorRef,
-    private appRef: ApplicationRef
+    // private appRef: ApplicationRef
   ) {
   }
 

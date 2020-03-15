@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.0.1](https://github.com/trungnghia112/angular-cli-seed/compare/v3.1.1...v4.0.1) (2020-03-15)
+
 ### [3.1.1](https://github.com/trungnghia112/angular-cli-seed/compare/v3.0.1...v3.1.1) (2019-12-03)
 
 ### [3.0.1](https://github.com/trungnghia112/angular-cli-seed/compare/v2.1.7...v3.0.1) (2019-09-02)

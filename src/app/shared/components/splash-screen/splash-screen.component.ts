@@ -13,8 +13,8 @@ import { PwaService } from '@core/services/pwa.service';
     // the fade-in/fade-out animation.
     trigger('fadeOut', [
       transition(':leave', [
-        query(':leave', animateChild(), {optional: true}),
-        animate(300, style({opacity: 0}))
+        query(':leave', animateChild(), { optional: true }),
+        animate(300, style({ opacity: 0 }))
       ])
     ])
   ],

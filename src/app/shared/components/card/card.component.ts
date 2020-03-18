@@ -55,9 +55,9 @@ export class SharedCardComponent implements BlockableUI {
 
   @Input() styleClass: string;
 
-  @ContentChild(SharedCardHeaderComponent, { static: false }) headerFacet;
+  @ContentChild(SharedCardHeaderComponent) headerFacet;
 
-  @ContentChild(SharedCardFooterComponent, { static: false }) footerFacet;
+  @ContentChild(SharedCardFooterComponent) footerFacet;
 
   constructor(private el: ElementRef) {
   }

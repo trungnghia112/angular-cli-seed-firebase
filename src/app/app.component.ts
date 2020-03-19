@@ -28,8 +28,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.auth.populate();
-
     this.router.events.subscribe((event: RouterEvent) => {
       if (event instanceof NavigationStart) {
         // Show loading indicator

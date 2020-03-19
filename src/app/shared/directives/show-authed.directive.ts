@@ -24,10 +24,10 @@ export class ShowAuthedDirective implements OnInit {
   }
 
   ngOnInit() {
-    this.auth.isAuthenticated.subscribe(
-      (isAuthenticated) => {
-        this.viewContainer.clear();
-        if (isAuthenticated && this.condition || !isAuthenticated && !this.condition) {
+    this.auth.currentUser.subscribe(
+      (user) => {
+        this.viewContainer.remove();
+        if (user && this.condition || !user && !this.condition) {
           this.viewContainer.createEmbeddedView(this.templateRef);
         }
       }

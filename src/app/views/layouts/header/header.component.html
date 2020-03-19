@@ -8,11 +8,10 @@
       <li class="nav-item" ngbDropdown placement="bottom-right">
         <a class="nav-link d-flex align-items-center" href="#" ngbDropdownToggle id="dropdownProfile">
           <app-partials-avatar class="mr-2" [user]="user"></app-partials-avatar>
-          <span class="d-lg-block">{{ user.name }}</span>
+          <span class="d-lg-block">{{ user.displayName }}</span>
         </a>
         <div class="dropdown-menu-right" ngbDropdownMenu aria-labelledby="dropdownProfile">
-          <a class="dropdown-item" href="#" [routerLink]="['/profile/overview']">Your Profile</a>
-          <div class="dropdown-divider"></div>
+          <!--<div class="dropdown-divider"></div>-->
           <a (click)="onSignOut()" class="dropdown-item" href="#">Sign Out</a>
         </div>
       </li>

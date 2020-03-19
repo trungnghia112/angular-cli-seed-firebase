@@ -50,6 +50,11 @@ export class LoginComponent implements OnInit {
     // }
   }
 
+  async onGoogleLogin() {
+    await this.auth.googleLogin();
+    await this.afterSignIn();
+  }
+
   async onSubmit() {
     this.submitted = true;
 
@@ -58,11 +63,11 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    const {email, password} = this.form.value;
+    const { email, password } = this.form.value;
 
 
     try {
-      const result = await this.auth.login({email, password}).toPromise();
+      await this.auth.emailLogin(email, password);
       // console.log(result);
     } catch (error) {
       const message: ErrorResponse = error;

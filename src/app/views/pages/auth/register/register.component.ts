@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '@core/services/auth.service';
 import { Router } from '@angular/router';
+import { Constants } from '@core/configs/constants';
+import { ErrorResponse } from '@core/interfaces/response';
+import { AuthService } from '@core/services/auth.service';
 import { CustomValidators } from '@shared/validator/custom.validator';
 
 @Component({
@@ -18,6 +20,8 @@ export class RegisterComponent implements OnInit {
   password: AbstractControl;
   confirmPassword: AbstractControl;
   agree: AbstractControl;
+
+  errorMessage: string;
 
   validationMessages = {
     name: {
@@ -47,7 +51,7 @@ export class RegisterComponent implements OnInit {
         name: ['', Validators.compose([
           Validators.required,
           Validators.minLength(3),
-          Validators.maxLength(200),
+          Validators.maxLength(200)
         ])],
         email: ['', Validators.compose([Validators.required, Validators.email])],
         agree: [true],
@@ -87,7 +91,40 @@ export class RegisterComponent implements OnInit {
     // }
   }
 
-  onSubmit() {
+  async onGoogleLogin() {
+    await this.auth.googleLogin();
+    await this.afterSignIn();
+  }
 
+  async onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.form.invalid) {
+      return;
+    }
+
+    const { email, password, name } = this.form.value;
+
+
+    try {
+      await this.auth.emailSignUp(email, password, name);
+      // console.log(result);
+    } catch (error) {
+      const message: ErrorResponse = error;
+      if (message.error.meta.messages) {
+        this.errorMessage = message.error.meta.messages;
+      }
+    }
+
+    await this.afterSignIn();
+
+  }
+
+  private afterSignIn() {
+    // Do after login stuff here, such router redirects, toast messages, etc.
+    // const redirectUrl = this.auth.redirectUrl;
+    // this.auth.redirectUrl = Constants.redirectUrl;
+    return this.router.navigate([Constants.redirectUrl]);
   }
 }

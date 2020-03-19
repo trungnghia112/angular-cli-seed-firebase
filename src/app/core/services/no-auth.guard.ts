@@ -18,7 +18,7 @@ export class NoAuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> {
-    return this.auth.isAuthenticated.pipe(
+    return this.auth.currentUser.pipe(
       take(1),
       map(isAuth => !isAuth),
       tap(loggedOut => {

@@ -1,111 +1,140 @@
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
+import { Constants } from '@core/configs/constants';
 import { User } from '@core/interfaces/user';
-import { ApiService } from '@core/services/api.service';
-import { JwtService } from '@core/services/jwt.service';
+import { NotifyService } from '@core/services/notify.service';
 
-import { BehaviorSubject, Observable } from 'rxjs';
-import { distinctUntilChanged, map } from 'rxjs/operators';
+import * as firebase from 'firebase/app';
+
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private currentUserSubject = new BehaviorSubject<User>({} as User);
-  public currentUser: Observable<User> = this.currentUserSubject.asObservable().pipe(distinctUntilChanged());
+  public currentUser: Observable<User | null>;
 
-  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
-  public isAuthenticated: Observable<boolean> = this.isAuthenticatedSubject.asObservable().pipe(distinctUntilChanged());
+  constructor(private afAuth: AngularFireAuth,
+              private afs: AngularFirestore,
+              private router: Router,
+              private notify: NotifyService) {
 
-  constructor(private apiService: ApiService,
-              private jwtService: JwtService) {
+    this.currentUser = this.afAuth.authState.pipe(
+      switchMap((user) => {
+        // console.log(user);
+        if (user) {
+          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+        } else {
+          return of(null);
+        }
+      })
+    );
   }
 
-  // Verify JWT in localstorage with server & load user's info.
-  // This runs once on application startup.
-  populate() {
-    // If JWT detected, attempt to get & store user's info
-    if (this.jwtService.getToken()) {
-      this.apiService.get('/users/profile')
-        .subscribe(
-          (res: any) => this.setAuth({...res.data, token: this.jwtService.getToken()}),
-          err => this.purgeAuth()
-        );
-    } else {
-      // Remove any potential remnants of previous auth states
-      this.purgeAuth();
+  ////// OAuth Methods /////
+
+  googleLogin() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    return this.oAuthLogin(provider);
+  }
+
+  githubLogin() {
+    const provider = new firebase.auth.GithubAuthProvider();
+    return this.oAuthLogin(provider);
+  }
+
+  facebookLogin() {
+    const provider = new firebase.auth.FacebookAuthProvider();
+    return this.oAuthLogin(provider);
+  }
+
+  twitterLogin() {
+    const provider = new firebase.auth.TwitterAuthProvider();
+    return this.oAuthLogin(provider);
+  }
+
+  private oAuthLogin(provider: firebase.auth.AuthProvider) {
+    return this.afAuth.auth.signInWithPopup(provider)
+      .then((credential) => {
+        this.notify.update('Welcome to Firestarter!!!', 'success');
+        return this.updateUserData(credential.user);
+      })
+      .catch((error) => this.handleError(error));
+  }
+
+  //// Anonymous Auth ////
+
+  anonymousLogin() {
+    return this.afAuth.auth.signInAnonymously()
+      .then((credential) => {
+        this.notify.update('Welcome to Firestarter!!!', 'success');
+        return this.updateUserData(credential.user, false); // if using firestore
+      })
+      .catch((error) => {
+        console.error(error.code);
+        console.error(error.message);
+        this.handleError(error);
+      });
+  }
+
+  //// Email/Password Auth ////
+
+  emailSignUp(email: string, password: string, name: string) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then((credential) => {
+        this.notify.update('Welcome to Firestarter!!!', 'success');
+        return this.updateUserData({ ...credential.user, displayName: name }); // if using firestore
+      })
+      .catch((error) => this.handleError(error));
+  }
+
+  emailLogin(email: string, password: string) {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .then((credential) => {
+        this.notify.update('Welcome to Firestarter!!!', 'success');
+        return this.updateUserData(credential.user, false); // if using firestore
+      })
+      .catch((error) => this.handleError(error));
+  }
+
+  // Sends email allowing user to reset password
+  resetPassword(email: string) {
+    const fbAuth = firebase.auth();
+
+    return fbAuth.sendPasswordResetEmail(email)
+      .then(() => this.notify.update('Password update email sent', 'info'))
+      .catch((error) => this.handleError(error));
+  }
+
+  signOut() {
+    this.afAuth.auth.signOut().then(() => {
+      this.router.navigate([Constants.loginUrl]);
+    });
+  }
+
+  // If error, console log and notify user
+  private handleError(error: Error) {
+    console.error(error);
+    this.notify.update(error.message, 'error');
+  }
+
+  // Sets user data to firestore after successful login
+  private async updateUserData(user: User, set: boolean = true) {
+    if (set) {
+      const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+
+      const data: User = {
+        uid: user.uid,
+        email: user.email || null,
+        displayName: user.displayName || 'nameless user',
+        photoURL: user.photoURL || null
+      };
+      return userRef.set(data);
     }
-  }
-
-  setAuth(user: User) {
-    // console.log('setAuth', user);
-    // Save JWT sent from server in localstorage
-    this.jwtService.saveToken(user.token);
-    // Set current user data into observable
-    this.currentUserSubject.next(user);
-    // Set isAuthenticated to true
-    this.isAuthenticatedSubject.next(true);
-
-    // get app config
-    this.getAppConfigs();
-  }
-
-  purgeAuth() {
-    // Remove JWT from localstorage
-    this.jwtService.destroyToken();
-    // Set current user to an empty object
-    this.currentUserSubject.next({} as User);
-    // Set auth status to false
-    this.isAuthenticatedSubject.next(false);
-  }
-
-  login(credentials): Observable<User> {
-    return this.apiService.post('/login', credentials)
-      .pipe(
-        map(
-          (res: any) => {
-            if (res && res.data) {
-              this.setAuth(res.data);
-            }
-            return res;
-          }
-        )
-      );
-  }
-
-  attemptAuth(type, credentials): Observable<User> {
-    const route = (type === 'login') ? '/login' : '';
-    return this.apiService.post('/users' + route, {user: credentials})
-      .pipe(
-        map(
-          (data: any) => {
-            this.setAuth(data.user);
-            return data;
-          }
-        )
-      );
-  }
-
-  getCurrentUser(): User {
-    return this.currentUserSubject.value;
-  }
-
-  isLoggedIn() {
-    return this.isAuthenticatedSubject.value;
-  }
-
-  // Update the user on the server (email, pass, etc)
-  update(user): Observable<User> {
-    return this.apiService
-      .put('/users/profile', {user})
-      .pipe(
-        map((data: any) => {
-          // Update the currentUser observable
-          this.currentUserSubject.next(data.user);
-          return data.user;
-        })
-      );
-  }
-
-  private async getAppConfigs() {
+    return false;
   }
 }

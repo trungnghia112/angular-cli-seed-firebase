@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "angular-cli-seed",
+      "public": "dist/angular-cli-seed/browser",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

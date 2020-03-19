@@ -6,7 +6,13 @@ import { PwaService } from '@core/services/pwa.service';
   selector: 'app-splash-screen',
   template: `
       <div class="splash-screen" *ngIf="show" @fadeOut>
-          <ng-content></ng-content>
+          <div class="app-loading">
+              <div class="bouncing-loader">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+              </div>
+          </div>
       </div>
   `,
   animations: [
@@ -14,20 +20,11 @@ import { PwaService } from '@core/services/pwa.service';
     trigger('fadeOut', [
       transition(':leave', [
         query(':leave', animateChild(), { optional: true }),
-        animate(300, style({ opacity: 0 }))
+        animate(200, style({ opacity: 0 }))
       ])
     ])
   ],
-  styles: [`
-      .splash-screen {
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          z-index: 9999;
-      }
-  `],
+  styleUrls: ['./splash-screen.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SharedSplashScreenComponent implements OnInit {
@@ -36,7 +33,7 @@ export class SharedSplashScreenComponent implements OnInit {
 
   constructor(
     private pwaService: PwaService,
-    private cdr: ChangeDetectorRef,
+    private cdr: ChangeDetectorRef
     // private appRef: ApplicationRef
   ) {
   }

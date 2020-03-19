@@ -1,3 +1,43 @@
+/*
+.ui-fileupload {
+  .ui-fileupload-buttonbar {
+    background-color: #f4f4f4;
+    padding: 0.571em 1em;
+    border: 1px solid #c8c8c8;
+    color: #333333;
+    border-bottom: 0 none;
+    .ui-button {
+      margin-right: 8px;
+    }
+  }
+  .ui-fileupload-content {
+    background-color: #ffffff;
+    padding: 0.571em 1em;
+    border: 1px solid #c8c8c8;
+    color: #333333;
+  }
+  .ui-progressbar {
+    top: 0;
+  }
+}
+
+.ui-fileupload-choose {
+  &:not(.ui-state-disabled):hover {
+    background-color: #116fbf;
+    color: #ffffff;
+    border-color: #116fbf;
+  }
+  &:not(.ui-state-disabled):active {
+    background-color: #005b9f;
+    color: #ffffff;
+    border-color: #005b9f;
+  }
+  &.ui-state-focus {
+    outline: 0 none;
+    outline-offset: 0px;
+  }
+}
+*/
 .ui-fileupload {
   .ui-fileupload-buttonbar {
     padding: 20px;

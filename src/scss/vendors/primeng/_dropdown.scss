@@ -1,21 +1,30 @@
 $button-ui-dropdown-trigger: calc(#{$btn-line-height * 1em} + #{$btn-padding-y * 2} + #{$btn-border-width * 2});
 $button-ui-dropdown-trigger-2: calc((#{$btn-line-height * 1em} + #{$btn-padding-y * 2} + #{$btn-border-width * 2}) * 2);
+p-dropdown.d-block {
+  .ui-dropdown {
+    display: block;
+  }
+}
 
 .ui-dropdown {
   min-width: auto;
 
   &:not(.ui-state-disabled):hover {
   }
+
   &:not(.ui-state-disabled).ui-state-focus {
   }
+
   .ui-dropdown-label {
     border: $input-border-width solid $input-border-color;
     font-weight: $input-font-weight;
     padding-right: #{$button-ui-dropdown-trigger};
   }
+
   .ui-dropdown-trigger {
     width: $button-ui-dropdown-trigger;
   }
+
   .ui-dropdown-clear-icon {
     right: $button-ui-dropdown-trigger;
     width: $button-ui-dropdown-trigger;
@@ -23,10 +32,12 @@ $button-ui-dropdown-trigger-2: calc((#{$btn-line-height * 1em} + #{$btn-padding-
     height: 100%;
     top: 0;
     bottom: 0;
+
     &:before {
       @include center();
     }
   }
+
   &.ui-dropdown-clearable {
     .ui-dropdown-label {
       padding-right: #{$button-ui-dropdown-trigger-2};
@@ -47,14 +58,25 @@ $button-ui-dropdown-trigger-2: calc((#{$btn-line-height * 1em} + #{$btn-padding-
   border: $dropdown-border-width solid $dropdown-border-color;
   @include border-radius($dropdown-border-radius);
   @include box-shadow($dropdown-box-shadow);
+
   .ui-dropdown-filter-container {
+    padding: 0;
+    display: block;
+    margin: 5px;
+    width: auto;
+
     .ui-dropdown-filter {
     }
+
     .ui-dropdown-filter-icon {
+      @include center(false, true);
+      right: 4px;
     }
   }
+
   .ui-dropdown-items {
     padding: 0;
+
     .ui-dropdown-item, .ui-dropdown-item-group {
       display: block;
       width: 100%; // For `<button>`s
@@ -72,6 +94,7 @@ $button-ui-dropdown-trigger-2: calc((#{$btn-line-height * 1em} + #{$btn-padding-
         text-decoration: none;
         @include gradient-bg($dropdown-link-active-bg);
       }
+
       &:not(.ui-state-highlight):not(.ui-state-disabled):hover,
       &:not(.ui-state-highlight):not(.ui-state-disabled):focus {
         color: $dropdown-link-hover-color;

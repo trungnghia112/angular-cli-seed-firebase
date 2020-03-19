@@ -1,26 +1,52 @@
-.ui-accordion {
-  .ui-accordion-header {
-    a {
-      .ui-accordion-toggle-icon {
-      }
-    }
-    &:not(.ui-state-active):not(.ui-state-disabled):hover a {
-      .ui-accordion-toggle-icon {
-      }
-    }
-    &:not(.ui-state-disabled).ui-state-active {
-      a {
-        .ui-accordion-toggle-icon {
-        }
-      }
-      &:hover {
-        a {
-          .ui-accordion-toggle-icon {
-          }
-        }
-      }
-    }
-  }
-  .ui-accordion-content {
-  }
+/*
+
+
+body .ui-accordion .ui-accordion-header {
+  margin-bottom: 2px;
 }
+body .ui-accordion .ui-accordion-header a {
+  padding: 0.571em 1em;
+  border: 1px solid #c8c8c8;
+  color: #333333;
+  background-color: #f4f4f4;
+  color: #333333;
+  font-weight: 700;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+body .ui-accordion .ui-accordion-header a .ui-accordion-toggle-icon {
+  color: #848484;
+}
+body .ui-accordion .ui-accordion-header:not(.ui-state-active):not(.ui-state-disabled):hover a {
+  background-color: #dbdbdb;
+  border: 1px solid #dbdbdb;
+  color: #333333;
+}
+body .ui-accordion .ui-accordion-header:not(.ui-state-active):not(.ui-state-disabled):hover a .ui-accordion-toggle-icon {
+  color: #333333;
+}
+body .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
+  background-color: #007ad9;
+  border: 1px solid #007ad9;
+  color: #ffffff;
+}
+body .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a .ui-accordion-toggle-icon {
+  color: #ffffff;
+}
+body .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active:hover a {
+  border: 1px solid #005b9f;
+  background-color: #005b9f;
+  color: #ffffff;
+}
+body .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active:hover a .ui-accordion-toggle-icon {
+  color: #ffffff;
+}
+body .ui-accordion .ui-accordion-content {
+  padding: 0.571em 1em;
+  border: 1px solid #c8c8c8;
+  background-color: #ffffff;
+  color: #333333;
+  padding: 0.571em 1em;
+}*/

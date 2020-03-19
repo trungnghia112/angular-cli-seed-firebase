@@ -51,3 +51,17 @@ Weight: 2
 
 Styleguide Components.tooltips.html-content
  */
+
+.tooltip-box-wrap {
+  padding-right: 25px;
+  position: relative;
+
+  .tooltip-box-icon {
+    font-size: 20px;
+    color: $info;
+    position: absolute;
+    top: 9px;
+    right: 0;
+    line-height: 20px;
+  }
+}

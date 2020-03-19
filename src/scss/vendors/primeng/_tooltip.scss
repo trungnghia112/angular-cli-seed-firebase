@@ -1,20 +1,22 @@
-.ui-tooltip {
-  .ui-tooltip-text {
-  }
-  &.ui-tooltip-right {
-    .ui-tooltip-arrow {
-    }
-  }
-  &.ui-tooltip-left {
-    .ui-tooltip-arrow {
-    }
-  }
-  &.ui-tooltip-top {
-    .ui-tooltip-arrow {
-    }
-  }
-  &.ui-tooltip-bottom {
-    .ui-tooltip-arrow {
-    }
-  }
+/*
+
+body .ui-tooltip .ui-tooltip-text {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 0.429em;
+  -webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
 }
+body .ui-tooltip.ui-tooltip-right .ui-tooltip-arrow {
+  border-right-color: #333333;
+}
+body .ui-tooltip.ui-tooltip-left .ui-tooltip-arrow {
+  border-left-color: #333333;
+}
+body .ui-tooltip.ui-tooltip-top .ui-tooltip-arrow {
+  border-top-color: #333333;
+}
+body .ui-tooltip.ui-tooltip-bottom .ui-tooltip-arrow {
+  border-bottom-color: #333333;
+}*/

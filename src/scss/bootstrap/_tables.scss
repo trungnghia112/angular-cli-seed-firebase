@@ -27,6 +27,7 @@ Styleguide Content.tables
       border-top-width: 0;
     }
   }
+
   tbody + tbody {
     border-top-width: $table-border-width;
   }
@@ -35,18 +36,24 @@ Styleguide Content.tables
 .card-body-fit {
   margin-left: -$card-spacer-x;
   margin-right: -$card-spacer-x;
+
   .table {
     thead, tbody {
       th, td {
         &:first-child {
           padding-left: $card-spacer-x;
         }
+
         &:last-child {
           padding-right: $card-spacer-x;
         }
       }
     }
   }
+}
+
+.bg-table-row {
+  background-color: #f8f9fa;
 }
 
 /*

@@ -77,16 +77,13 @@ $prefix-for-spec: true !default;
   @return $remSize * 1rem;
 }
 
-@mixin font-size-rem($size) {
-  font-size: calculateRem($size);
-}
-
 @function calculateEm($size, $pxBase: 16px) {
   @return ($size / 1em) * $pxBase + 0px;
 }
 
-@mixin font-size-em($size) {
-  font-size: calculateEm($size);
+@mixin font-size-rem($size) {
+  //font-size: $size;
+  font-size: calculateRem($size);
 }
 
 /*p {

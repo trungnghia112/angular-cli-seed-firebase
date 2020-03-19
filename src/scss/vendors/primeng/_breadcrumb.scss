@@ -1,15 +1,22 @@
-.ui-breadcrumb {
-  ul li {
-    .ui-menuitem-link {
-    }
-    &.ui-breadcrumb-chevron {
-    }
-    &:first-child {
-      a {
-      }
-    }
-    .ui-menuitem-icon {
+/*
 
-    }
-  }
+body .ui-breadcrumb {
+  background-color: #ffffff;
+  border: 1px solid #c8c8c8;
+  padding: 0.571em 1em;
 }
+body .ui-breadcrumb ul li .ui-menuitem-link {
+  color: #333333;
+  margin: 0;
+}
+body .ui-breadcrumb ul li.ui-breadcrumb-chevron {
+  margin: 0 0.5em 0 0.5em;
+  color: #848484;
+}
+body .ui-breadcrumb ul li:first-child a {
+  color: #848484;
+  margin: 0;
+}
+body .ui-breadcrumb ul li .ui-menuitem-icon {
+  color: #848484;
+}*/

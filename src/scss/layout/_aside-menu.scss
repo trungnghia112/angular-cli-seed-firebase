@@ -1,0 +1,93 @@
+.aside-menu {
+  background-color: #ffffff;
+  position: fixed;
+  z-index: $zindex-modal-backdrop - 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: $main-aside-width;
+  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, .15);
+  padding: 1rem $main-aside-inner;
+  @include flexbox;
+  @include flex-direction(column);
+  .aside-menu-panel {
+    margin-left: -$main-aside-inner;
+    margin-right: -$main-aside-inner;
+    @include flex(1);
+    overflow-y: auto;
+  }
+  @include media-breakpoint-down(md) {
+    left: -$main-aside-width;
+    @include transition($transition-base);
+    .aside-menu-active & {
+      left: 0;
+      .aside-menu-close {
+        left: $main-aside-width;
+      }
+    }
+  }
+
+  .aside-menu-close {
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include transition($transition-base);
+  }
+  .aside-menu-logo {
+    display: block;
+    margin-bottom: 2rem;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .ui-panelmenu {
+    color: rgba(0, 0, 0, .5);
+    a {
+      color: inherit;
+    }
+    .ui-panelmenu-header.ui-state-active .ui-panelmenu-header-link,
+    .ui-panelmenu-header-link.ui-state-active,
+    .ui-menuitem-link.ui-state-active {
+      color: rgba(0, 0, 0, .9);
+    }
+    .ui-panelmenu-header.ui-state-active .ui-panelmenu-header-link,
+    .ui-panelmenu-header-link.ui-state-active {
+      &:before {
+        content: '';
+        background-color: #5e72e4;
+        width: 2px;
+        left: 0;
+        top: 4px;
+        bottom: 4px;
+        position: absolute;
+      }
+    }
+    .ui-panelmenu-header-link {
+      position: relative;
+      @include flexbox;
+      @include align-items(center);
+      @include font-size-rem(18px);
+      padding: #{$main-aside-inner/2} #{$main-aside-inner};
+      line-height: 1.5;
+      .ui-panelmenu-icon {
+        @include order(2);
+        margin-left: auto;
+      }
+      .ui-menuitem-icon {
+        text-align: left;
+        width: 2.25rem;
+        margin: 0;
+      }
+    }
+    .ui-menuitem-link {
+      @include flexbox;
+      padding: 5px #{$main-aside-inner};
+      &:before {
+        content: '-';
+        margin-right: 5px;
+      }
+    }
+  }
+}

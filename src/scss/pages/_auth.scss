@@ -1,0 +1,67 @@
+.auth-wrapper {
+  overflow: hidden;
+}
+
+.auth-header {
+  //@include gradient-x($brand, lighten($brand, 10));
+  background: $bg-linear-gradient;
+  padding: 4rem 0 8rem;
+
+  .auth-content {
+    padding-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.auth-content {
+  max-width: 450px;
+  margin: auto;
+
+  .card {
+    //background-color: #f7fafc;
+  }
+
+  .auth-content-text {
+    a {
+      color: inherit;
+      @include hover-focus-active {
+        color: $brand;
+      }
+    }
+  }
+}
+
+.auth-content-wide {
+  max-width: 800px;
+}
+
+.auth-container {
+  position: relative;
+
+  .auth-content {
+    margin-top: -8rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-bottom: 200px solid #172b4d;
+    border-left: 4000px solid transparent;
+    top: -95px;
+    z-index: 1;
+  }
+
+}
+
+.auth-logo {
+  img {
+    width: 200px;
+    display: block;
+    margin: auto;
+  }
+}

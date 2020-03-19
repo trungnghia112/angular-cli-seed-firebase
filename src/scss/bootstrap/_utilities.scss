@@ -48,7 +48,6 @@ $i_marginpadding: 50;
   $i_marginpadding: $i_marginpadding - 5;
 }
 
-@each $color, $value in $colors {
-  // `text-emphasis-variant()` has been deprecated as of v4.4.0. It will be removed entirely in v5.
-  //@include text-emphasis-variant(".text-#{$color}", $value);
+@each $color, $value in $theme-colors {
+  @include text-emphasis-variant(".text-#{$color}", $value, true);
 }

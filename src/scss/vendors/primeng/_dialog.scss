@@ -15,6 +15,7 @@
   .ui-dialog-titlebar {
     @extend .modal-header;
   }
+
   .ui-dialog-titlebar-icon {
     @include font-size($close-font-size);
     font-weight: $close-font-weight;
@@ -22,29 +23,38 @@
     color: $close-color;
     text-shadow: $close-text-shadow;
     opacity: .5;
+
     .pi {
       @include lineAwesome-icon;
     }
+
     .pi-times:before {
       content: "\f342";
     }
+
     .pi-window-maximize:before {
       content: "\f1d0";
     }
+
     .pi-window-minimize:before {
       content: "\f1a4";
     }
   }
+
   .ui-dialog-titlebar-close {
     @include order(2);
   }
+
   .ui-dialog-content {
     padding: $modal-inner-padding;
+    //overflow: auto; dropdown will be error in modal (eg: categories modal)
   }
+
   .ui-dialog-footer {
     border-top: $modal-footer-border-width solid $modal-footer-border-color;
     @include border-bottom-radius($modal-content-border-radius);
     padding: $modal-inner-padding;
+
     p-footer {
       display: flex;
       align-items: center; // vertically center
@@ -52,29 +62,44 @@
       > :not(:first-child) {
         margin-left: .25rem;
       }
+
       > :not(:last-child) {
         margin-right: .25rem;
       }
     }
   }
+
   &.ui-confirmdialog {
     text-align: center;
     max-width: 420px;
+
     .ui-dialog-content {
     }
+
     .ui-dialog-titlebar {
       border-width: 0;
       padding-bottom: 0;
+
       .ui-dialog-title {
         display: none;
       }
     }
+
     .ui-dialog-footer {
       border-top-width: 0;
       padding-bottom: $modal-inner-padding*2;
+
       p-footer {
         @include justify-content(center);
       }
+    }
+  }
+
+  &.modal-dialog-scrollable {
+    @include flex-direction(column);
+
+    .ui-dialog-content {
+      overflow: auto;
     }
   }
 }

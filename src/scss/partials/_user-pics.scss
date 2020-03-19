@@ -1,0 +1,156 @@
+/*
+User Pics
+
+Weight: 1
+
+Styleguide Partials.user-pics
+*/
+
+/*
+Basic User Pics
+
+Markup:
+<span class="userpic {{modifier_class}}">
+ <img src="/dummy/media/users/100_1.jpg" alt="image">
+</span>
+<span class="userpic {{modifier_class}}">
+ <span>JD</span>
+</span>
+<span class="userpic userpic-circle {{modifier_class}}">
+ <img src="/dummy/media/users/100_1.jpg" alt="image">
+</span>
+<span class="userpic userpic-circle {{modifier_class}}">
+ <span>JD</span>
+</span>
+
+.userpic-sm - A small userpic.
+.userpic-md - A medium userpic.
+.userpic-lg - A large userpic.
+.userpic-xl - A large userpic.
+
+Weight: 1
+
+Styleguide Partials.user-pics.basic
+*/
+/*
+Contextual classes
+
+Markup:
+<span class="userpic {{modifier_class}}">
+ <span>JD</span>
+</span>
+<span class="userpic userpic-circle {{modifier_class}}">
+ <span>JD</span>
+</span>
+
+.userpic-primary - primary userpic.
+.userpic-secondary - secondary userpic.
+.userpic-success - success userpic.
+.userpic-danger - danger userpic.
+.userpic-warning - warning userpic.
+.userpic-info - info userpic.
+.userpic-light - light userpic.
+.userpic-dark - dark userpic.
+.userpic-brand - brand userpic.
+
+Weight: 2
+
+Styleguide Partials.user-pics.contextual-classes
+*/
+
+$userpic: 38px;
+$userpic-sm: 27px;
+$userpic-md: 52px;
+$userpic-lg: 65px;
+$userpic-xl: 80px;
+
+.userpic {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border-radius: $border-radius;
+  vertical-align: middle;
+  img, span {
+    width: $userpic;
+    height: $userpic;
+    border-radius: $border-radius;
+  }
+  img {
+    object-fit: cover;
+  }
+  span {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    font-weight: 500;
+    background-color: theme-color('primary');
+    color: #ffffff;
+  }
+  &.userpic-circle {
+    img, span {
+      border-radius: 50%;
+    }
+  }
+  &.userpic-sm {
+    img, span {
+      width: $userpic-sm;
+      height: $userpic-sm;
+    }
+    span {
+      font-size: 0.8rem;
+    }
+  }
+  &.userpic-md {
+    img, span {
+      width: $userpic-md;
+      height: $userpic-md;
+    }
+    span {
+      font-size: 1.3rem;
+    }
+  }
+  &.userpic-lg {
+    img, span {
+      width: $userpic-lg;
+      height: $userpic-lg;
+    }
+    span {
+      font-size: 1.3rem;
+    }
+  }
+  &.userpic-xl {
+    img, span {
+      width: $userpic-xl;
+      height: $userpic-xl;
+    }
+    span {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .userpic-#{$color} {
+    span {
+      background-color: rgba($value, 0.1);
+      color: $value;
+    }
+  }
+}
+
+.userpic {
+  position: relative;
+  .userpic-status {
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: inline-block;
+  }
+}

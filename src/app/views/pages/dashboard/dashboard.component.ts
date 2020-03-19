@@ -15,16 +15,6 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dashboardService.getTotalProviders().subscribe(
-      (res: any) => {
-        this.totalProviders = res;
-      }
-    );
-    this.dashboardService.getTotalWebsites().subscribe(
-      (res: any) => {
-        this.totalWebsites = res;
-      }
-    );
   }
 
 }

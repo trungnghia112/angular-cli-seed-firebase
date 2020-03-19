@@ -1,55 +1,106 @@
-.ui-treetable {
-  .ui-treetable-caption,
-  .ui-treetable-summary {
-  }
-  .ui-treetable-caption {
-  }
-  .ui-treetable-summary {
-  }
-  .ui-treetable-thead > tr > th {
-  }
-  .ui-treetable-t > tr > td {
-  }
-  .ui-treetable-tfoot > tr > td {
-  }
-  .ui-sortable-column {
-    .ui-sortable-column-icon {
-    }
-    &:not(.ui-state-highlight):hover {
-      .ui-sortable-column-icon {
-      }
-    }
-    &.ui-state-highlight {
-      .ui-sortable-column-icon {
-      }
-    }
-    input {
-      &:focus {
-      }
-    }
-  }
-  .ui-treetable-t > tr {
-    > td {
-      .ui-treetable-toggler {
-      }
-      .ui-treetable-chkbox {
-      }
-    }
-    &.ui-state-highlight {
-      > td {
-        .ui-treetable-toggler {
-        }
-      }
-    }
-    &.ui-contextmenu-selected {
-      > td {
-        .ui-treetable-toggler {
-        }
-      }
-    }
-  }
-  &.ui-treetable-hoverable-rows .ui-treetable-t > tr:not(.ui-state-highlight):not(.ui-contextmenu-selected):hover {
-  }
-  .ui-column-resizer-helper {
-  }
+/*
+
+body .ui-treetable .ui-treetable-caption,
+body .ui-treetable .ui-treetable-summary {
+  background-color: #f4f4f4;
+  color: #333333;
+  border: 1px solid #c8c8c8;
+  padding: 0.571em 1em;
+  text-align: center;
 }
+body .ui-treetable .ui-treetable-caption {
+  border-bottom: 0 none;
+  font-weight: 700;
+}
+body .ui-treetable .ui-treetable-summary {
+  border-top: 0 none;
+  font-weight: 700;
+}
+body .ui-treetable .ui-treetable-thead > tr > th {
+  padding: 0.571em 0.857em;
+  border: 1px solid #c8c8c8;
+  font-weight: 700;
+  color: #333333;
+  background-color: #f4f4f4;
+}
+body .ui-treetable .ui-treetable-tbody > tr > td {
+  padding: 0.571em 0.857em;
+}
+body .ui-treetable .ui-treetable-tfoot > tr > td {
+  padding: 0.571em 0.857em;
+  border: 1px solid #c8c8c8;
+  font-weight: 700;
+  color: #333333;
+  background-color: #ffffff;
+}
+body .ui-treetable .ui-sortable-column .ui-sortable-column-icon {
+  color: #848484;
+}
+body .ui-treetable .ui-sortable-column:not(.ui-state-highlight):hover {
+  background-color: #e0e0e0;
+  color: #333333;
+}
+body .ui-treetable .ui-sortable-column:not(.ui-state-highlight):hover .ui-sortable-column-icon {
+  color: #333333;
+}
+body .ui-treetable .ui-sortable-column.ui-state-highlight {
+  background-color: #007ad9;
+  color: #ffffff;
+}
+body .ui-treetable .ui-sortable-column.ui-state-highlight .ui-sortable-column-icon {
+  color: #ffffff;
+}
+body .ui-treetable .ui-editable-column input {
+  font-size: 14px;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+body .ui-treetable .ui-editable-column input:focus {
+  outline: 1px solid #007ad9;
+  outline-offset: 2px;
+}
+body .ui-treetable .ui-treetable-tbody > tr {
+  background-color: #ffffff;
+  color: #333333;
+}
+body .ui-treetable .ui-treetable-tbody > tr > td {
+  background-color: inherit;
+  border: 1px solid #c8c8c8;
+}
+body .ui-treetable .ui-treetable-tbody > tr > td .ui-treetable-toggler {
+  color: #848484;
+  vertical-align: middle;
+}
+body .ui-treetable .ui-treetable-tbody > tr > td .ui-treetable-chkbox {
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+body .ui-treetable .ui-treetable-tbody > tr.ui-state-highlight {
+  background-color: #007ad9;
+  color: #ffffff;
+}
+body .ui-treetable .ui-treetable-tbody > tr.ui-state-highlight > td {
+  background-color: inherit;
+  border: 1px solid #c8c8c8;
+}
+body .ui-treetable .ui-treetable-tbody > tr.ui-state-highlight > td .ui-treetable-toggler {
+  color: #ffffff;
+}
+body .ui-treetable .ui-treetable-tbody > tr.ui-contextmenu-selected {
+  background-color: #007ad9;
+  color: #ffffff;
+}
+body .ui-treetable .ui-treetable-tbody > tr.ui-contextmenu-selected > td {
+  background-color: inherit;
+  border: 1px solid #c8c8c8;
+}
+body .ui-treetable .ui-treetable-tbody > tr.ui-contextmenu-selected > td .ui-treetable-toggler {
+  color: #ffffff;
+}
+body .ui-treetable.ui-treetable-hoverable-rows .ui-treetable-tbody > tr:not(.ui-state-highlight):not(.ui-contextmenu-selected):hover {
+  cursor: pointer;
+  background-color: #eaeaea;
+  color: #333333;
+}
+body .ui-treetable .ui-column-resizer-helper {
+  background-color: #007ad9;
+}*/

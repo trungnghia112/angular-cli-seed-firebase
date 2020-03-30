@@ -58,3 +58,7 @@ debug.log
 
 # others
 *_BAK*
+
+.firebase/
+functions/lib/
+functions/node_modules/

@@ -7,6 +7,8 @@ import { environment } from '@env/environment';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
 
 import { SharedBoxLoadingComponent } from './components/box-loading/box-loading.component';
 import { SharedBoxNoDataComponent } from './components/box-nodata/box-nodata.component';
@@ -74,6 +76,8 @@ const sharedComponents = [
 
     // 3rd party
     TranslateModule,
+    ToastModule,
+    ConfirmDialogModule,
 
     // modules
     SharedCardModule,

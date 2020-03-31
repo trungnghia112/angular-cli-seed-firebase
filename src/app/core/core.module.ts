@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ToastModule } from 'primeng/toast';
 import { httpInterceptorProviders } from './http-interceptors';
 
 @NgModule({
@@ -16,8 +14,6 @@ import { httpInterceptorProviders } from './http-interceptors';
     MessageService
   ],
   exports: [
-    ToastModule,
-    ConfirmDialogModule
   ]
 })
 export class CoreAppModule {

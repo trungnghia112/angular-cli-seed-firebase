@@ -62,3 +62,4 @@ debug.log
 .firebase/
 functions/lib/
 functions/node_modules/
+/src/__ngcc_entry_points__.json

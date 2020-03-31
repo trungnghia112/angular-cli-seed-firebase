@@ -4,6 +4,7 @@ import { AuthGuard } from '@core/services/auth.guard';
 import { ErrorPageComponent } from '@pages/error-page/error-page.component';
 import { PagesComponent } from '@pages/pages.component';
 
+
 const routes: Routes = [
   {path: 'auth', loadChildren: () => import('./views/pages/auth/auth.module').then(m => m.AuthModule)},
 
@@ -38,7 +39,8 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     initialNavigation: 'enabled'
-})],
+  })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

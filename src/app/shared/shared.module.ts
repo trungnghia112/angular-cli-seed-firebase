@@ -1,13 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { environment } from '@env/environment';
-
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 
 import { SharedBoxLoadingComponent } from './components/box-loading/box-loading.component';
@@ -20,14 +15,6 @@ import { SharedTableModule } from './components/table/table.module';
 
 import { DirectivesModule } from './directives/directives.module';
 import { PipesModule } from './pipes/pipes.module';
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(
-    http,
-    `${environment.i18nPrefix}/assets/i18n/`,
-    '.json'
-  );
-}
 
 const sharedComponents = [
   SharedBoxLoadingComponent,
@@ -50,13 +37,6 @@ const sharedComponents = [
     PipesModule,
 
     // 3rd party
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    })
 
   ],
   declarations: [
@@ -75,9 +55,7 @@ const sharedComponents = [
     PipesModule,
 
     // 3rd party
-    TranslateModule,
     ToastModule,
-    ConfirmDialogModule,
 
     // modules
     SharedCardModule,

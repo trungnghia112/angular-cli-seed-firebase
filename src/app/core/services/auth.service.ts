@@ -18,12 +18,12 @@ import { switchMap } from 'rxjs/operators';
 export class AuthService {
   public currentUser: Observable<User | null>;
 
-  constructor(private afAuth: AngularFireAuth,
+  constructor(private auth: AngularFireAuth,
               private afs: AngularFirestore,
               private router: Router,
               private notify: NotifyService) {
 
-    this.currentUser = this.afAuth.authState.pipe(
+    this.currentUser = this.auth.authState.pipe(
       switchMap((user) => {
         // console.log(user);
         if (user) {
@@ -58,7 +58,7 @@ export class AuthService {
   }
 
   private oAuthLogin(provider: firebase.auth.AuthProvider) {
-    return this.afAuth.auth.signInWithPopup(provider)
+    return this.auth.signInWithPopup(provider)
       .then((credential) => {
         this.notify.update('Welcome to Firestarter!!!', 'success');
         return this.updateUserData(credential.user);
@@ -69,7 +69,7 @@ export class AuthService {
   //// Anonymous Auth ////
 
   anonymousLogin() {
-    return this.afAuth.auth.signInAnonymously()
+    return this.auth.signInAnonymously()
       .then((credential) => {
         this.notify.update('Welcome to Firestarter!!!', 'success');
         return this.updateUserData(credential.user, false); // if using firestore
@@ -84,7 +84,7 @@ export class AuthService {
   //// Email/Password Auth ////
 
   emailSignUp(email: string, password: string, name: string) {
-    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+    return this.auth.createUserWithEmailAndPassword(email, password)
       .then((credential) => {
         this.notify.update('Welcome to Firestarter!!!', 'success');
         return this.updateUserData({ ...credential.user, displayName: name }); // if using firestore
@@ -93,7 +93,7 @@ export class AuthService {
   }
 
   emailLogin(email: string, password: string) {
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+    return this.auth.signInWithEmailAndPassword(email, password)
       .then((credential) => {
         this.notify.update('Welcome to Firestarter!!!', 'success');
         return this.updateUserData(credential.user, false); // if using firestore
@@ -111,7 +111,7 @@ export class AuthService {
   }
 
   signOut() {
-    this.afAuth.auth.signOut().then(() => {
+    this.auth.signOut().then(() => {
       this.router.navigate([Constants.loginUrl]);
     });
   }

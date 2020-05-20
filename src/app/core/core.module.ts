@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { httpInterceptorProviders } from './http-interceptors';
 
 @NgModule({
@@ -10,11 +10,9 @@ import { httpInterceptorProviders } from './http-interceptors';
   ],
   providers: [
     httpInterceptorProviders,
-    ConfirmationService,
     MessageService
   ],
-  exports: [
-  ]
+  exports: []
 })
 export class CoreAppModule {
   constructor(

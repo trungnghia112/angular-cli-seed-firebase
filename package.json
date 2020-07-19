@@ -41,7 +41,7 @@
     "bootstrap": "^4.5.0",
     "express": "^4.15.2",
     "firebase": "^7.14.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "primeicons": "^3.0.0-rc.1",
     "primeng": "^9.0.6",
     "rxjs": "~6.5.4",

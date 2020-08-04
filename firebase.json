@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "angular-cli-seed",
-      "public": "dist/angular-cli-seed/dist/angular-cli-seed/browser",
+      "public": "dist/angular-cli-seed/browser",
       "ignore": [
         "**/.*"
       ],

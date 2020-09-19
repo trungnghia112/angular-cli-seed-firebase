@@ -63,17 +63,17 @@ $prefix-for-spec: true !default;
 // Set a pixel font size with rem fallback
 //
 
-@function calculatePx($size) {
+@function calculatePx($size, $pxBase: 16px) {
   $pxSize: $size / 1rem;
-  @return $pxSize * 16px;
+  @return $pxSize * $pxBase;
 }
 
 //
-// Set a rem font size with pixel fallback
+//Set a rem font size with pixel fallback
 //
 
-@function calculateRem($size) {
-  $remSize: $size / 16px;
+@function calculateRem($size, $pxBase: 16px) {
+  $remSize: $size / $pxBase;
   @return $remSize * 1rem;
 }
 

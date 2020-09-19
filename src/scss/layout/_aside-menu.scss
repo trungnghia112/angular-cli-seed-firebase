@@ -10,17 +10,68 @@
   padding: 1rem $main-aside-inner;
   @include flexbox;
   @include flex-direction(column);
+
   .aside-menu-panel {
     margin-left: -$main-aside-inner;
     margin-right: -$main-aside-inner;
     @include flex(1);
     overflow-y: auto;
   }
+
+  .aside-menu-favicon {
+    display: none;
+    margin-left: -$main-aside-inner/2;
+    margin-right: -$main-aside-inner/2;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .aside-menu-collapse & {
+      width: $main-aside-width-collapse;
+
+      .aside-menu-logo {
+        display: none;
+      }
+
+      .aside-menu-favicon {
+        display: block;
+      }
+
+      .p-panelmenu-icon {
+        visibility: hidden;
+      }
+
+      .p-panelmenu-header-link {
+        .p-menuitem-text {
+          display: none;
+        }
+      }
+
+      .p-toggleable-content {
+        position: absolute;
+        left: 100%;
+        //margin-top: -45px;
+        margin-top: calc(-1.5 * 1rem - #{$main-aside-inner});
+        width: 160px;
+        background-color: #ffffff;
+        @include box-shadow($box-shadow-sm);
+      }
+
+      .p-panelmenu .p-panelmenu-content {
+        border-width: 0;
+      }
+    }
+  }
   @include media-breakpoint-down(md) {
     left: -$main-aside-width;
     @include transition($transition-base);
     .aside-menu-active & {
       left: 0;
+
       .aside-menu-close {
         left: $main-aside-width;
       }
@@ -33,27 +84,32 @@
     top: 0;
     @include transition($transition-base);
   }
+
   .aside-menu-logo {
     display: block;
     margin-bottom: 2rem;
+
     img {
       width: 100%;
       height: auto;
     }
   }
 
-  .ui-panelmenu {
+  .p-panelmenu {
     color: rgba(0, 0, 0, .5);
+
     a {
       color: inherit;
     }
-    .ui-panelmenu-header.ui-state-active .ui-panelmenu-header-link,
-    .ui-panelmenu-header-link.ui-state-active,
-    .ui-menuitem-link.ui-state-active {
+
+    .p-panelmenu-header.p-state-active .p-panelmenu-header-link,
+    .p-panelmenu-header-link.p-state-active,
+    .p-menuitem-link.p-state-active {
       color: rgba(0, 0, 0, .9);
     }
-    .ui-panelmenu-header.ui-state-active .ui-panelmenu-header-link,
-    .ui-panelmenu-header-link.ui-state-active {
+
+    .p-panelmenu-header.p-state-active .p-panelmenu-header-link,
+    .p-panelmenu-header-link.p-state-active {
       &:before {
         content: '';
         background-color: #5e72e4;
@@ -64,26 +120,31 @@
         position: absolute;
       }
     }
-    .ui-panelmenu-header-link {
+
+    .p-panelmenu-header-link {
       position: relative;
       @include flexbox;
       @include align-items(center);
       @include font-size-rem(18px);
       padding: #{$main-aside-inner/2} #{$main-aside-inner};
       line-height: 1.5;
-      .ui-panelmenu-icon {
+
+      .p-panelmenu-icon {
         @include order(2);
         margin-left: auto;
       }
-      .ui-menuitem-icon {
+
+      .p-menuitem-icon {
         text-align: left;
         width: 2.25rem;
         margin: 0;
       }
     }
-    .ui-menuitem-link {
+
+    .p-menuitem-link {
       @include flexbox;
       padding: 5px #{$main-aside-inner};
+
       &:before {
         content: '-';
         margin-right: 5px;

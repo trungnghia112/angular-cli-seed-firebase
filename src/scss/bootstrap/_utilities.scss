@@ -48,6 +48,16 @@ $i_marginpadding: 50;
   $i_marginpadding: $i_marginpadding - 5;
 }
 
+@mixin bg-opacity($color,$value) {
+  $i_bg_opacity: 50;
+  @while $i_bg_opacity >= 0 {
+    .bg-#{$color}-o-#{$i_bg_opacity} {
+      background-color: rgba($value, $i_bg_opacity/100);
+    }
+    $i_bg_opacity: $i_bg_opacity - 10;
+  }
+}
+
 @each $color, $value in $theme-colors {
-  @include text-emphasis-variant(".text-#{$color}", $value, true);
+  @include bg-opacity($color, $value);
 }

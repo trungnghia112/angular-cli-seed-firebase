@@ -41,7 +41,7 @@ $prefix-for-spec: true !default;
 }
 
 //
-//Transform
+// Transform
 //
 @mixin transform($property: none) {
   // none | <transform-function>
@@ -60,25 +60,21 @@ $prefix-for-spec: true !default;
 }
 
 //
-//Set a pixel font size with rem fallback
+// Set a pixel font size with rem fallback
 //
 
-@function calculatePx($size, $pxBase: 16px) {
+@function calculatePx($size) {
   $pxSize: $size / 1rem;
-  @return $pxSize * $pxBase;
+  @return $pxSize * 16px;
 }
 
 //
-//Set a rem font size with pixel fallback
+// Set a rem font size with pixel fallback
 //
 
-@function calculateRem($size, $pxBase: 16px) {
-  $remSize: $size / $pxBase;
+@function calculateRem($size) {
+  $remSize: $size / 16px;
   @return $remSize * 1rem;
-}
-
-@function calculateEm($size, $pxBase: 16px) {
-  @return ($size / 1em) * $pxBase + 0px;
 }
 
 @mixin font-size-rem($size) {
@@ -86,12 +82,12 @@ $prefix-for-spec: true !default;
   font-size: calculateRem($size);
 }
 
-/*p {
-  @include font-size-rem(14px)
-}*/
+//p {
+//  @include font-size-rem(14px)
+//}
 
 //
-//SVG background images with PNG and retina fallback
+// SVG background images with PNG and retina fallback
 //
 $image-path: '../images' !default;
 $fallback-extension: 'png' !default;
@@ -110,12 +106,12 @@ $retina-suffix: '@2x';
   }
 }
 
-/*body {
-  @include background-image('pattern');
-}*/
+//body {
+//  @include background-image('pattern');
+//}
 
 //
-//Animations and keyframes
+// Animations and keyframes
 //
 
 @mixin keyframes($animation-name) {
@@ -144,21 +140,35 @@ $retina-suffix: '@2x';
   animation: #{$str};
 }
 
-/*
-@include keyframes(slide-down) {
-  0% { opacity: 1; }
-  90% { opacity: 0; }
+@mixin animation-delay($delay: 0s) {
+  @include prefixer(animation-delay, $delay, webkit moz ms o spec);
 }
 
-.element {
-  width: 100px;
-  height: 100px;
-  background: black;
-  @include animation('slide-down 5s 3');
-}*/
+@mixin animation-name($name) {
+  @include prefixer(animation-name, $name, webkit moz ms o spec);
+}
 
 //
-//Cross browser opacity
+// Perspective
+//
+@mixin perspective($property: none) {
+  @include prefixer(perspective, $property, webkit moz ms o spec);
+}
+
+//@include keyframes(slide-down) {
+//  0% { opacity: 1; }
+//  90% { opacity: 0; }
+//}
+//
+//.element {
+//  width: 100px;
+//  height: 100px;
+//  background: black;
+//  @include animation('slide-down 5s 3');
+//}
+
+//
+// Cross browser opacity
 //
 
 @mixin opacity($opacity) {
@@ -167,11 +177,9 @@ $retina-suffix: '@2x';
   filter: alpha(opacity=$opacity-ie); //IE8
 }
 
-/*
-.faded-text {
-  @include opacity(0.8);
-}
-*/
+//.faded-text {
+//  @include opacity(0.8);
+//}
 
 //
 // Centering Mixin
@@ -194,23 +202,23 @@ $retina-suffix: '@2x';
   }
 }
 
-/*.parent {
-  position: relative;
-}
-
-.child {
-  &.both {
-    @include center;
-  }
-
-  &.horizontal {
-    @include center(true, false);
-  }
-
-  &.vertical {
-    @include center(false, true);
-  }
-}*/
+//.parent {
+//  position: relative;
+//}
+//
+//.child {
+//  &.both {
+//    @include center;
+//  }
+//
+//  &.horizontal {
+//    @include center(true, false);
+//  }
+//
+//  &.vertical {
+//    @include center(false, true);
+//  }
+//}
 
 // --------------------------------------------------------
 // arrows
@@ -256,4 +264,41 @@ $retina-suffix: '@2x';
     border-bottom: $size-h solid $color;
     border-left: $size-w solid transparent;
   }
+}
+
+@function calculateTextHeight(
+  $line: 1,
+  $font-size: $font-size-base,
+  $line-height: $line-height-base
+) {
+  @return ($font-size * $line-height * $line);
+}
+
+@mixin max-height-text(
+  $line: 1,
+  $fixed: false,
+  $font-size: $font-size-base,
+  $line-height: $line-height-base
+) {
+  max-height: calculateTextHeight($line, $font-size, $line-height);
+  @if ($fixed) {
+    height: calculateTextHeight($line, $font-size, $line-height);
+  }
+  overflow: hidden;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+@mixin overlay-item() {
+  content: '';
+  position: absolute;
+  @include gradient-y(transparent, #000);
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }

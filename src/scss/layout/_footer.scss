@@ -1,7 +1,31 @@
 /* ==========================================================================
 Footer
 ========================================================================== */
-.main-footer {
+.main-header {
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0;
+  display: block;
+  background: $bg-linear-gradient;
+  color: #ffffff;
+
+  a {
+    color: inherit;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    height: $header-bottom;
+  }
+
+  .dropdown-menu {
+    z-index: $zindex-modal-backdrop - 1;
+  }
 }
+
+.navbar-nav-info {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+

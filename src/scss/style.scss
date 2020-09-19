@@ -54,7 +54,8 @@ Weight: 6
 Styleguide Modules
  */
 //@import "modules/facebook-responsive";
-//@import "modules/IconHoverEffects";
+//@import 'modules/iconHoverEffects/iconHoverEffects';
+//@import 'modules/creativeLinkEffects/creativeLinkEffects';
 @import 'modules/list';
 @import 'modules/widgets';
 @import 'layout/header';

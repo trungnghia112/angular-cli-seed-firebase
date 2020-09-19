@@ -1,8 +1,10 @@
 <div class="container-fluid">
   <div class="d-flex justify-content-between align-items-center">
-    <div>
-      <h4 class="h4 m-0 d-none d-lg-block">{{ titleService.title$ | async }}</h4>
+    <div class="d-flex align-content-center">
       <button (click)="asideMenuService.show()" class="icon-mobile-toolbar-toggler d-lg-none"><span></span></button>
+      <button (click)="asideMenuService.collapse(collapseMenu);collapseMenu = !collapseMenu;"
+              class="icon-mobile-toolbar-toggler d-none d-lg-block mr-3"><span></span></button>
+      <h4 class="h4 m-0 d-none d-lg-block">{{ titleService.title$ | async }}</h4>
     </div>
     <ul *ngIf="auth.currentUser | async as user" class="navbar-nav-info">
       <li class="nav-item" ngbDropdown placement="bottom-right">
@@ -18,4 +20,3 @@
     </ul>
   </div>
 </div>
-

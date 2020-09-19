@@ -1,0 +1,74 @@
+[debug] [2020-08-28T09:51:37.985Z] ----------------------------------------------------------------------
+[debug] [2020-08-28T09:51:37.990Z] Command:       /Users/nghia/.nvm/versions/node/v10.13.0/bin/node /Users/nghia/.config/yarn/global/node_modules/.bin/firebase emulators:start --only functions
+[debug] [2020-08-28T09:51:37.991Z] CLI Version:   8.7.0
+[debug] [2020-08-28T09:51:37.991Z] Platform:      darwin
+[debug] [2020-08-28T09:51:37.991Z] Node Version:  v10.13.0
+[debug] [2020-08-28T09:51:37.993Z] Time:          Fri Aug 28 2020 16:51:37 GMT+0700 (Indochina Time)
+[debug] [2020-08-28T09:51:37.993Z] ----------------------------------------------------------------------
+[debug] [2020-08-28T09:51:37.993Z] 
+[debug] [2020-08-28T09:51:38.026Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-28T09:51:38.027Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2020-08-28T09:51:38.196Z] [hub] writing locator at /var/folders/ns/mb5r3r_17zjc3c5tkypdsxsh0000gn/T/hub-firetools-io.json
+[debug] [2020-08-28T09:51:38.213Z] defaultcredentials: writing to file /Users/nghia/.config/firebase/trungnghia112_gmail_com_application_default_credentials.json
+[debug] [2020-08-28T09:51:38.218Z] Setting GAC to /Users/nghia/.config/firebase/trungnghia112_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/nghia/.config/firebase/trungnghia112_gmail_com_application_default_credentials.json"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: firestore, database, hosting, pubsub {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mfirestore, database, hosting, pubsub\u001b[22m"}}
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[debug] [2020-08-28T09:51:38.462Z] Error: Cannot find module '/Users/nghia/dev/angular-cli-seed_BAK/dist/angular-cli-seed/package.json'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:580:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:506:25)
+    at Module.require (internal/modules/cjs/loader.js:636:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at FunctionsEmulator.askInstallNodeVersion (/Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/functionsEmulator.js:346:21)
+    at FunctionsEmulator.start (/Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/functionsEmulator.js:106:32)
+    at Function.<anonymous> (/Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/registry.js:26:28)
+    at Generator.next (<anonymous>)
+    at /Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/registry.js:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/registry.js:4:12)
+    at Function.start (/Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/registry.js:20:16)
+    at /Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/controller.js:97:43
+    at Generator.next (<anonymous>)
+    at /Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/controller.js:8:71
+    at new Promise (<anonymous>)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-08-28T09:55:09.446Z] ----------------------------------------------------------------------
+[debug] [2020-08-28T09:55:09.449Z] Command:       /Users/nghia/.nvm/versions/node/v10.13.0/bin/node /Users/nghia/.config/yarn/global/node_modules/.bin/firebase emulators:start --only functions
+[debug] [2020-08-28T09:55:09.450Z] CLI Version:   8.7.0
+[debug] [2020-08-28T09:55:09.450Z] Platform:      darwin
+[debug] [2020-08-28T09:55:09.450Z] Node Version:  v10.13.0
+[debug] [2020-08-28T09:55:09.467Z] Time:          Fri Aug 28 2020 16:55:09 GMT+0700 (Indochina Time)
+[debug] [2020-08-28T09:55:09.467Z] ----------------------------------------------------------------------
+[debug] [2020-08-28T09:55:09.467Z] 
+[debug] [2020-08-28T09:55:09.501Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-28T09:55:09.502Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2020-08-28T09:55:09.777Z] [hub] writing locator at /var/folders/ns/mb5r3r_17zjc3c5tkypdsxsh0000gn/T/hub-firetools-io.json
+[debug] [2020-08-28T09:55:09.808Z] defaultcredentials: writing to file /Users/nghia/.config/firebase/trungnghia112_gmail_com_application_default_credentials.json
+[debug] [2020-08-28T09:55:09.812Z] Setting GAC to /Users/nghia/.config/firebase/trungnghia112_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/nghia/.config/firebase/trungnghia112_gmail_com_application_default_credentials.json"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: firestore, database, hosting, pubsub {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mfirestore, database, hosting, pubsub\u001b[22m"}}
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[debug] [2020-08-28T09:55:10.071Z] Error: Cannot find module '/Users/nghia/dev/angular-cli-seed_BAK/dist/angular-cli-seed/package.json'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:580:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:506:25)
+    at Module.require (internal/modules/cjs/loader.js:636:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at FunctionsEmulator.askInstallNodeVersion (/Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/functionsEmulator.js:346:21)
+    at FunctionsEmulator.start (/Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/functionsEmulator.js:106:32)
+    at Function.<anonymous> (/Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/registry.js:26:28)
+    at Generator.next (<anonymous>)
+    at /Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/registry.js:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/registry.js:4:12)
+    at Function.start (/Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/registry.js:20:16)
+    at /Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/controller.js:97:43
+    at Generator.next (<anonymous>)
+    at /Users/nghia/.config/yarn/global/node_modules/firebase-tools/lib/emulator/controller.js:8:71
+    at new Promise (<anonymous>)
+[error] 
+[error] Error: An unexpected error has occurred.

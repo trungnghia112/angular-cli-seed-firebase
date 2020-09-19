@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { LocalStorageService } from '@core/services/local-storage.service';
-import { MenuItem } from 'primeng';
+import { MenuItem } from 'primeng/api';
 import { BehaviorSubject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 
